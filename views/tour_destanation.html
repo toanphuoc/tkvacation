@@ -1,0 +1,71 @@
+<link href="css/tours.css" rel="stylesheet">
+<div class="about-img-wapper text-center" ng-style="{'background-image': 'url(' + data.des.img + ')'}">
+    <h1>Destination</h1>
+    <h3>{{data.des.title}}</h3>
+</div>
+<div class = "tours">
+	<div class="container padding_30">
+		<div class="row margin_0">
+			<div class="col-md-9 col-sm-12 col-xs-12 tours-des">
+				<div ng-repeat="item in data.data">
+					<div class="row item">
+						<div class="col-md-3 col-sm-3 col-xs-12 padding_0">
+							<a href="#!/tour/{{item.id}}" title="">
+								<img src="{{item.img}}" alt="">
+							</a>	
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 tour-detail-center">
+							<h3 class="name">
+								<a class="name-text" href="#!/tour/{{item.id}}" title="">{{item.name}}</a>
+							</h3>
+							<p class="tourmaster-tour-info-duration-text">
+								<i class="fa fa-clock-o"></i>
+								{{item.period}}
+							</p>
+							<p class="tourmaster-tour-info-availability">
+								<i class="fa fa-calendar"></i>
+								Availability : Jan 16’ - Dec 16’
+							</p>
+							<div class="itinerary">
+								{{item.overview}}
+							</div>
+							
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-12 tour-detail-right">
+							<div class="tours-price">
+								<p class="price-value-dolar">{{item.price | currency}}</p>
+								<p class="price-value-vnd">{{item.price_vnd | currency: "VND"}}</p>
+								<!-- <input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS"> -->
+								<a href="#!/tour/{{item.id}}" class="tours-details-btn">VIEW DETAILS</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12">
+				<div class="other-destinations">
+					<h3>Other destinations</h3>	
+					<div ng-repeat="item in otherDes">
+						<div class="item">
+							<a href="#!/tours/{{item.des.id}}" title="">
+								<img src="{{item.des.img}}" alt="">
+							</a>
+							<div class="other-des-name">
+								<div class="other-des-name-value" style="float: left;">
+									{{item.des.title}}
+								</div>
+								<div style="float: right;">
+									{{item.totalTours}} {{item.totalTours > 1 ? 'Tours' : 'Tour'}}
+								</div>
+								<div class="clearfix">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>

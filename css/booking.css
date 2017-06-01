@@ -1,0 +1,91 @@
+.booking-img-wapper{
+    background-image: url("../imgs/shutterstock_61340065.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 75%;
+    margin-top: -50px;
+    max-height: 500px;
+}
+
+.booking{
+	/*background: #F5F5F5;*/
+    padding: 55px 0 0 0;
+}
+
+.tour-name{
+	position: absolute;
+    bottom: 80px;
+}
+
+.tour-name h3{
+	font-size: 29px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: #fff;
+}
+
+.info-overview{
+    /*border-bottom: 2px solid #EBEBEB;*/
+}
+
+.info-overview h6{
+	font-size: 18px;
+    margin-bottom: 32px;
+
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-transform: none;   
+    color: #383838;
+}
+
+.info-overview h6 i{
+    color: #4692e7;
+    margin-right: 15px;
+}
+
+.form-booking label{
+	text-align: left !important;
+    color: #5c5c5c;
+    font-weight: 500;
+    padding-left: 0;
+    padding-top: 15px !important;
+}
+
+.form-booking input, .form-booking textarea{
+	border-color: #e6e6e6;
+	background: #ffffff;
+	color: #545454;
+	border-width: 2px;
+    border-style: solid;
+    font-size: 13px;
+    /*height: 48px;*/
+    padding: 20px 17px;
+    width: 100%;
+    outline: none;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    resize: vertical;
+}
+
+.form-booking button{
+	    background-color: #4674e7;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 15px 27px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 0;
+}
+
+@media(max-width: 480px){
+    .tour-name h3{
+        font-size: 20px;
+    }
+    
+}

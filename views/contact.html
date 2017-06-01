@@ -1,0 +1,93 @@
+
+<div class="about-img-wapper text-center">
+    <h1>Contact Us</h1>  
+</div>
+<div class="container contact">
+	<div class="row margin_0">
+	    <!-- Map Column -->
+	    <div class="col-md-7">
+	       	<h3 class="title">Leave us your info</h3>
+
+	        <form name="sentMessage" id="contactForm" novalidate>
+	            <div class="control-group form-group">
+	                <div class="controls">
+	                    <!-- <label>Full Name:</label> -->
+	                    <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name." placeholder="Full Name">
+	                    <p class="help-block"></p>
+	                </div>
+	            </div>
+	            <div class="control-group form-group">
+	                <div class="controls">
+	                    <!-- <label>Phone Number:</label> -->
+	                    <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number." placeholder="Phone number">
+	                </div>
+	            </div>
+	            <div class="control-group form-group">
+	                <div class="controls">
+	                    <!-- <label>Email Address:</label> -->
+	                    <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address." placeholder="Email Address">
+	                </div>
+	            </div>
+	            <div class="control-group form-group">
+	                <div class="controls">
+	                    <!-- <label>Message:</label> -->
+	                    <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none" placeholder="Message"></textarea>
+	                </div>
+	            </div>
+	            <div id="success"></div>
+	            <!-- For success/fail messages -->
+	            <button type="submit" class="btn btn-primary send-message">SUBMIT NOW</button>
+	        </form>
+	    </div>
+	    <!-- Contact Details Column -->
+	    <div class="col-md-5">
+	        <h3 class="title">Contact Details</h3>
+	        <div class="contact-details">
+	        	<p>
+		            02 Nguyen Huy Tu, Dakao Ward, District 1
+		        </p>
+		        <p>
+		        	<i class="fa fa-2x fa-phone"></i> 
+		            <abbr title="Phone"></abbr>
+		            <a href="tel:+84 938 144 236">+84 938 144 236</a>
+		        </p>
+		        <p><i class="fa fa-2x fa-envelope-o"></i> 
+		            <abbr title="Email"></abbr> <a href="mailto:mailto:contact@tkvation.com">contact@tkvation.com</a>
+		        </p>
+		        <p><i class="fa fa-2x fa-skype"></i> 
+		            <abbr title="Email"></abbr> <a href="skype:tuan.hm2501?chat">Tuan Hoang</a>
+		        </p>
+	        </div>
+	    
+	    </div>
+	</div>
+	<!-- /.row -->
+
+	<!-- Contact Form -->
+	<!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+	<div class="row">
+	    <div class="col-md-8">
+	        
+	    </div>
+
+	</div>
+</div>
+<div id="map" style="width: 100%; height: 450px; margin-top: 50px;"></div>
+
+<script type="text/javascript">
+	function initMap() {
+		var center = {lat: 10.792846, lng: 106.697280};
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          	center: center,
+          	scrollwheel: false,
+          	zoom: 16
+        });
+
+        var marker = new google.maps.Marker({
+          	position: center,
+          	map: map
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuJXnkQBHazJavfLbUbJtOPfnvBchRANo&callback=initMap"></script>

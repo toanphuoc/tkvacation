@@ -1,0 +1,177 @@
+.about-img-wapper h3{
+	font-size: 30px;
+    letter-spacing: 2px;
+    color: #fff;
+    position: relative;
+    top: 60%;
+    margin-top: 5px;
+}
+
+.tours{
+	background: #F3F3F3;
+    padding: 75px 0;
+}
+
+.tours .tours-des .item{
+	background: #fff;
+	padding-left: 0;
+	margin-bottom: 45px;
+	border: 1px solid #e1e1e1;
+}
+
+.other-destinations .item{
+	background: #fff;
+	padding-left: 0;
+	margin-bottom: 20px;
+	border: 1px solid #e1e1e1;
+}
+
+.tours .item img{
+	width: 100%;
+}
+
+.item .name{
+	font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    margin-top: 3px;
+}
+
+.item i{
+	color: #4692e7;
+	font-size: 18px;
+	margin-right: 5px;
+}
+
+.item .name .name-text{
+	color: #383838;
+    text-decoration: none;
+}
+
+.price{
+	position: relative;
+}
+
+.tours-details-btn{
+	background: #4692e7;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    padding: 14px 15px 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+}
+
+.tours-details-btn:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.tourmaster-tour-info-duration-text, .tourmaster-tour-info-availability{
+	margin-bottom: 9px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+.price-value{
+	float: left;
+}
+
+.price-value-dolar{
+	color: #1b1b1b;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.price-value-vnd{
+	color: #8c8c8c;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.itinerary{
+   	font-weight: 500;
+    color: #8c8c8c;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -ms-word-break: break-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow-wrap: break-word;
+    max-height: 90px;
+}
+
+.tours-price{
+	text-align: center;
+    position: relative;
+    
+}
+
+.tour-detail-right{
+	padding: 20px 0px;
+}
+
+.other-destinations{
+
+}
+
+.other-destinations h3{
+	font-size: 16px;
+    text-transform: none;
+    font-weight: 700;
+    letter-spacing: 0px;
+    position: relative;
+    margin-bottom: 28px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.other-des-name{
+	position: relative;
+    padding: 9px 10px;
+}
+
+.other-des-name-value{
+	    font-weight: 600;
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+@media(min-width: 768px){
+	.tour-detail-center{
+		padding: 20px 35px;
+		max-height: 245px;
+	}
+
+	.tours-price{
+		border-left: 2px solid #e1e1e1;
+	}
+}
+
+@media(max-width: 480px){
+
+	.tour-detail-center{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.item .name{
+    	font-size: 16px;
+    	margin-top: 25px;
+	}
+
+	.tours .tours-des .item{
+		border: 0;
+	}
+}

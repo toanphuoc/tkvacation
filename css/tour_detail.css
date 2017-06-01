@@ -1,0 +1,186 @@
+.tour-img-wapper{
+    background-image: url("../imgs/shutterstock_61340065.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 75%;
+    margin-top: -50px;
+    max-height: 500px;
+}
+
+.tour{
+	background: #F5F5F5;
+    padding: 55px 0 0 0;
+}
+
+.tour-info-top{
+	margin-bottom: 30px;
+}
+
+.tour-info-top p{
+	font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: #414141;
+    font-family: "Poppins", sans-serif;
+}
+
+.tour-info-top p i{
+	font-size: 1.2em;
+    margin-right: 10px;
+	color: #4692e7;
+}
+
+.tour-name{
+	position: absolute;
+    bottom: 80px;
+}
+
+.tour-name h3{
+	font-size: 29px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: #fff;
+}
+
+.natigate-detail-info{
+	background-color: #EBEBEB;
+}
+
+.natigate-detail-info a{
+	color: #9a9a9a;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 28px 25px 28px;
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.natigate-detail-info .active{
+	color: #1b1b1b;
+	border-bottom: 3px solid #4692e7;
+}
+
+.info-overview, .info-itenirary, .info-price{
+	    /*background: #fff;*/
+    padding: 55px 0px 25px 0;
+    border-bottom: 2px solid #EBEBEB;
+}
+
+.info-overview h6, .info-itenirary h6, .info-price h6{
+	font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-transform: none;   
+    color: #383838;
+    padding-bottom: 25px;
+}
+
+.info-overview h6 i, .info-itenirary h6 i, .info-price h6 i{
+    color: #4692e7;
+    margin-right: 15px;
+}
+
+.info-overview-content{
+	/*padding: 0 10px;*/
+}
+
+.info-overview-content p{
+	margin-top: 0px;
+    margin-bottom: 20px;
+    color: #8c8c8c;
+    font-size: 15px;
+}
+
+.info-itenirary h4{
+	background-color: #f3f3f3;
+    color: #4692e7;
+    text-transform: none;
+    letter-spacing: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 23px 25px 22px;
+    margin-bottom: 10px;
+}
+
+.info-itenirary h4 span{
+	color: #191919;
+	margin-right: 13px;
+}
+
+.booking{
+	border-left: 1px solid #e1e1e1;
+    padding: 0px 0px 45px;
+    border-right: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.booking .submit{
+	background: #4675e7;
+    color: #fff;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 15px 27px;
+    display: inline-block;
+    border: 0;
+    width: 100%;
+    text-decoration: none;
+}
+
+.booking .start-date-value{
+	margin-bottom: 30px;
+}
+
+.booking i{
+	font-size: 20px;
+    line-height: 45px;
+    width: 30px;
+    color: #4692e7;
+}
+
+.num-of-people-input{
+    color: #8c8c8c;
+    font-size: 13px;
+    height: 48px;
+    padding: 12px 17px;
+    width: 100%;
+    border: 0px;
+    outline: none;
+    border: 2px solid #e6e6e6;
+}
+
+.booking-footer{
+    margin-top: 30px;
+    border-top: 1px solid #e1e1e1;
+    padding-top: 30px;
+}
+
+.price{
+    background: #4179C1;
+    padding: 20px 15px;
+    margin-bottom: 30px;
+}
+
+.price p{
+    font-size: 32px;
+    margin-right: 15px;
+    font-weight: 800;
+    color: #fff;
+}
+
+@media(min-width: 768px){
+	
+}
+
+@media(max-width: 480px){
+	.tour-name h3{
+		font-size: 20px;
+	}
+
+	.natigate-detail-info{
+		display: none;
+	}
+	
+}

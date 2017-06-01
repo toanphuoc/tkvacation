@@ -1,0 +1,241 @@
+ <header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="fill" style="background-image:url('imgs/shutterstock_94851763-700x450.jpg');"></div>
+            <div class="carousel-caption caption-text">
+                <p>Special</p>
+                <h1>7 Days in Sapa</h1>
+                <!-- <input type="button" name="" value="LEARN MORE"> -->
+                <a href="#!/tour/1">LEARN MORE</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('imgs/slider-2.jpg');"></div>
+            <div class="carousel-caption caption-text">
+               <p>Special</p>
+               <h1>7 Days in Switzerland</h1>
+               <a href="#!/tour/1">LEARN MORE</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('imgs/slider-3.jpg');"></div>
+            <div class="carousel-caption caption-text">
+                <p>Special</p>
+                <h1>7 Days in Switzerland</h1>
+                <a href="#!/tour/1">LEARN MORE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" style="width: 5%;" href="javascript:void(0)" ng-click="prevCarouel()" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" style="width: 5%;" href="javascript:void(0)" ng-click="nextCarouel()" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</header>
+<div style="clear: both; position: relative;">
+    <div class="search">
+        <div class="search-group">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 m-col-md-5 col-sm-6">
+                        <label>Keywords</label>
+                        <input class="form-control" type="text" name="">
+                    </div>
+                    <div class="col-md-3 m-col-md-5 col-sm-6">
+                        <label>Destination</label>
+                         <div style="position: relative; ">
+                        <select class="form-control">
+                            <option value="">Any</option>
+                            <option value="africa">Africa</option>
+                            <option value="america">America</option>
+                            <option value="asia">Asia</option>
+                            <option value="eastern-europe">Eastern Europe</option>
+                            <option value="europe">Europe</option>
+                            <option value="south-america">South America</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 m-col-md-5 col-sm-6">
+                        <label>Duration</label>
+                        <div style="position: relative; ">
+                            
+                            <select class="form-control">
+                           <option value="">Any</option>
+                           <option value="1">1 Day Tour</option>
+                           <option value="2">2-4 Days Tour</option>
+                           <option value="5">5-7 Days Tour</option>
+                           <option value="7">7+ Days Tour</option>
+
+                        </select>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-3 m-col-md-5 col-sm-6">
+                        <label>Date</label>
+                        <input class="form-control" type="text" name="">
+                    </div>
+                    <div class="col-md-3 m-col-md-5 col-sm-6">
+                        <label></label>
+                        <!-- <a href="#!/search" class="search-btn">SEARCH</a> -->
+                        <input class="form-control search-btn" type="button" value="SEARCH" name="" ng-click="search()">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popular-tour">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 title">
+                        <h3>Popular Tour Packages</h3>
+                        <a class="gdlr-core-title-item-link" href="#!/tours/1">
+                            <span class="gdlr-core-separator">/</span>
+                        View All Tours</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container lst-popular-item">
+                <div class="row margin_0">
+                    <div class="col-md-3 col-sm-3">
+                        <div class="popular-tour-item">
+                            <a href="#!/tour/1">
+                                <img src="imgs/shutterstock_94851763-700x450.jpg">
+                            </a>
+                            <div class="tourmaster-tour-content-wrap">
+                                <h3 class="tourmaster-tour-title">
+                                    <a href="#!/tour/1">Dubai – All Stunning Places</a>
+                                </h3>
+                                <div class="price">
+                                    <span>$2,800</span>
+                                </div>
+                                <div class="tourmaster-tour-info-wrap clearfix">
+                                    <div class="tourmaster-tour-info-duration-text">
+                                        <i class="glyphicon glyphicon-time" style="color: #4692e7;"></i>
+                                        <span>9 Days 8 Nights</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                         <div class="popular-tour-item">
+                            <a href="#!/tour/1">
+                                <img src="imgs/shutterstock_151616084-700x450.jpg">
+                            </a>
+                            <div class="tourmaster-tour-content-wrap">
+                                <h3 class="tourmaster-tour-title">
+                                    <a href="#!/tour/1">Dubai – All Stunning Places</a>
+                                </h3>
+                                <div class="price">
+                                    <span>$2,800</span>
+                                </div>
+                                <div class="tourmaster-tour-info-wrap clearfix">
+                                    <div class="tourmaster-tour-info-duration-text">
+                                        <i class="glyphicon glyphicon-time" style="color: #4692e7;"></i>
+                                        <span>9 Days 8 Nights</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                         <div class="popular-tour-item">
+                            <a href="#!/tour/1">
+                                <img src="imgs/shutterstock_178807262-700x450.jpg">
+                            </a>
+                            <div class="tourmaster-tour-content-wrap">
+                                <h3 class="tourmaster-tour-title">
+                                    <a href="#!/tour/1">Dubai – All Stunning Places</a>
+                                </h3>
+                                <div class="price">
+                                    <span>$2,800</span>
+                                </div>
+                                <div class="tourmaster-tour-info-wrap clearfix">
+                                    <div class="tourmaster-tour-info-duration-text">
+                                        <i class="glyphicon glyphicon-time" style="color: #4692e7;"></i>
+                                        <span>9 Days 8 Nights</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                         <div class="popular-tour-item">
+                            <a href="#!/tour/1">
+                                <img src="imgs/shutterstock_178807262-700x450.jpg">
+                            </a>
+                            <div class="tourmaster-tour-content-wrap">
+                                <h3 class="tourmaster-tour-title">
+                                    <a href="#!/tour/1">Dubai – All Stunning Places</a>
+                                </h3>
+                                <div class="price">
+                                    <span>$2,800</span>
+                                </div>
+                                <div class="tourmaster-tour-info-wrap clearfix">
+                                    <div class="tourmaster-tour-info-duration-text">
+                                        <i class="glyphicon glyphicon-time" style="color: #4692e7;"></i>
+                                        <span>9 Days 8 Nights</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popular-des">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 title">
+                    <h3>
+                    <i class="glyphicon glyphicon-map-marker" style=""></i> <span>Popular Destinations</span></h3>
+                        <a class="gdlr-core-title-item-link" href="#!/destinations">
+                            <span class="gdlr-core-separator">/</span>
+                        View All Destinations</a>
+                </div>
+            </div>
+        </div>
+        <div class="popular-des-lst">
+            <div class="row margin_0">
+                <div ng-repeat="item in des">
+                    <div class="col-md-3 m-col-md-5 col-sm-12 col-xs-12 margin_0 padding_0 item" ng-mouseover="showAllTours($event)" ng-mouseleave="hiddenAllTours($event)">
+                        <img src="{{item.des.img}}">
+                        <div class="tourmaster-tour-category-overlay"></div>
+                        <div class="tourmaster-tour-category-head">
+                            <div class="tourmaster-tour-category-head-display">
+                                <h3 class="tourmaster-tour-category-title">
+                                    <i class="glyphicon glyphicon-map-marker"></i>
+                                    {{item.des.title}}
+                                </h3>
+                                <div class="tourmaster-tour-category-count">
+                                    {{item.totalTours}} {{item.totalTours > 1 ? 'Tours' : 'Tour'}}
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="view-all hidden">
+                                <a href="#!/tours/{{item.des.id}}">VIEW ALL TOURS</a>
+                            </div>
+                        </div>
+                        <!-- <div class="tourmaster-tour-category-line"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- End popular des -->
+</div>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TK Vacations</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-app="vacation">
+    <!-- Navigation -->
+    <div id="header">
+        <nav class="navbar navbar-inverse navbar-fixed-top header" role="navigation">
+            <div class="container traveltour-top-bar">
+                <div class="row">
+                    <div class="col-md-6 text-left">
+                        <span class="fa fa-phone phone">
+                            <a href="tel:84-938-144-236"><span>+84.938.144.236</span></a>
+                            
+                        </span>
+                        <span class="fa fa-envelope email">
+                            <a href="mailto:contact@tkvation.com"><span>contact@tkvation.com</span></a>
+                        </span>
+                    </div>
+                   <!--  <div class="col-md-6 text-right">
+                        <a href="">Customize a tour</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header logo">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#!/"><img src="imgs/logo.png"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right menu">
+                        <li >
+                            <a class="active" href="#!/">HOME</a>
+                        </li>
+                        <li>
+                            <a href="#!/destinations">DESTINATIONS</a>
+                        </li>
+                        <li>
+                            <a href="#!/custumize_tour">CUSTOMIZE TOUR</a>
+                        </li>
+                        <li>
+                            <a href="#!/search">FIND TOUR</a>
+                        </li>
+                        <li>
+                            <a href="#!/contact">CONTACT</a>
+                        </li>
+                        <li>
+                            <a href="#!/about">ABOUT US</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+    </div>
+
+    <!-- page content -->
+    <ng-view></ng-view>
+
+    <!-- Page footer -->
+    <footer>
+        <div class="traveltour-footer-wrapper">
+            <div class="container padding_30">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <h4>
+                            <a href="#!/">
+                                <img src="imgs/logo.png">
+                            </a>
+                        </h4>
+                        
+                        <div class="textwidget">
+                            <p><a href="#!/destinations">Destinations</a></p>
+                            <p><a href="#!/search">Find tour</a></p>
+                            <p><a href="#!/contact">Contact</a></p>
+                            <p><a href="#!/about">About Us</a></p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <h4>CONTACT INFO</h4>
+                        <div class="textwidget">
+                            <p><i class="fa fa-envelope"></i> <span> 02 Nguyen Huy Tu, Dakao Ward, District 1</span></p>
+                            <p><i class="fa fa-phone"></i> <a href="tel:+84 938 144 236"> +84 938 144 236</a></p>
+                            <p><i class="fa fa-envelope"></i><a href="mailto:contact@tkvation.com"> contact@tkvation.com</a></p>
+                            <p><i class="fa fa-skype"></i> <a href="skype:tuan.hm2501?chat"> AJ Tuan Hoang</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center footer-copyright">
+            <p>Copyright 2027 TkVacation, All Right Reserved</p>
+        </div>
+        
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/angular/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controller/contanst.js"></script>
+    <script type="text/javascript" src="js/controller/home_controller.js"></script>
+    <script type="text/javascript" src="js/controller/about_controller.js"></script>
+    <script type="text/javascript" src="js/controller/contact_controller.js"></script>
+    <script type="text/javascript" src="js/controller/destination_controller.js"></script>
+    <script type="text/javascript" src="js/controller/tours_controller.js"></script>
+    <script type="text/javascript" src="js/controller/tour_detail_controller.js"></script>
+    <script type="text/javascript" src="js/controller/booking_controller.js"></script>
+    <script type="text/javascript" src="js/controller/search_controller.js"></script>
+    <script type="text/javascript" src="js/controller/customize_controller.js"></script>
+
+    <script>
+
+        $('.menu a').hover(function(){
+           var parent = $(this).parent().parent();
+           var ele = $(parent).find('.active');
+           console.log($(ele).text());
+           $(ele).removeClass('active');
+        });
+
+        $(window).scroll(function () { 
+            if ($(this).scrollTop() < 100) {
+                $(".traveltour-top-bar").removeClass("hidden", 1500);
+                $('.header').removeClass('bg-overload');
+            }else{
+                $(".traveltour-top-bar").addClass("hidden", 1500);
+                $('.header').addClass('bg-overload');
+            }
+
+            $(document).on('click','.navbar-collapse.in',function(e) {
+                if( $(e.target).is('a') ) {
+                    $(this).collapse('hide');
+                }
+            });
+        });
+
+        
+
+        // $('.popular-des-lst .item').hover(function(){
+        //     $(this).find('.tourmaster-tour-category-overlay').removeClass('hidden', 1500);
+        // }, function(){
+        //     $(this).find('.tourmaster-tour-category-overlay').addClass('hidden', 1500);
+        // });
+    </script>
+</body>
+
+</html>

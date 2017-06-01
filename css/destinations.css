@@ -1,0 +1,102 @@
+.destinations{
+	margin-top: 60px;
+}
+
+.destinations .item{
+	margin-bottom: 40px;	
+}
+
+.destinations .item img{
+	width: 100%;
+}
+
+.category-overlay{
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.65;
+}
+
+.category-overlay-front{
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../imgs/tour-category-item-gradient.png') bottom repeat-x;
+}
+
+.category-head{
+	position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px
+}
+
+.category-head-display{
+	padding: 0px 25px 25px;
+}
+
+.category-head-animate{
+	padding: 0px 25px 27px;
+    position: relative;
+    margin-top: -15px;
+}
+
+.category-head-link{
+	font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #4692e7;
+    text-decoration: none;
+    -webkit-transition: background 300ms, color 300ms, border-color 300ms;
+     font-family: "Poppins", sans-serif;
+}
+
+.category-head-link:hover{
+	color: #4692e7;
+    text-decoration: none;
+}
+
+.category-head-divider{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-color: #4692e7;
+
+}
+
+.category-title{
+	font-size: 16px;
+    margin-bottom: 0px;
+    float: left;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-top: 0px;
+}
+
+.category-count{
+	    float: right;
+    margin-top: 2px;
+    color: #4692e7;
+}
+
+@media(max-width: 768px){
+	.destinations .item{
+		width: 50%;
+	}
+}
+
+@media(max-width: 480px){
+	.destinations .item{
+		width: 100%;
+	}
+}
