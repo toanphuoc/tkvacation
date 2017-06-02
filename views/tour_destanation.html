@@ -11,7 +11,7 @@
 					<div class="row item">
 						<div class="col-md-3 col-sm-3 col-xs-12 padding_0">
 							<a href="#!/tour/{{item.id}}" title="">
-								<img src="{{item.img}}" alt="">
+								<img ng-src="{{item.img}}" alt="" image-resize image-percent="50" >
 							</a>	
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12 tour-detail-center">
@@ -49,7 +49,7 @@
 					<div ng-repeat="item in otherDes">
 						<div class="item">
 							<a href="#!/tours/{{item.des.id}}" title="">
-								<img src="{{item.des.img}}" alt="">
+								<img ng-src="{{item.des.img}}" alt="">
 							</a>
 							<div class="other-des-name">
 								<div class="other-des-name-value" style="float: left;">
