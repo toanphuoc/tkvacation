@@ -32,4 +32,12 @@ app.controller('HomeController', function ($scope, $location, $http) {
 		$(ele).find('.view-all').addClass("hidden");
 	}
 
+	//Get popular tours
+	$http({
+		method: 'GET',
+		url: BASE_URL + 'tour/getPopularTour'
+	}).then(function successCallback(response){
+		$scope.popularTours = response.data;
+	});
+
 });

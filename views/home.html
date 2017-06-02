@@ -106,88 +106,24 @@
             </div>
             <div class="container lst-popular-item">
                 <div class="row margin_0">
-                    <div class="col-md-3 col-sm-3">
+
+
+                    <div class="col-md-3 col-sm-3" ng-repeat="item in popularTours">
                         <div class="popular-tour-item">
-                            <a href="#!/tour/1">
-                                <img src="imgs/shutterstock_94851763-700x450.jpg">
+                            <a href="#!/tour/{{item.id}}">
+                                <img ng-src="{{item.img}}">
                             </a>
                             <div class="tourmaster-tour-content-wrap">
                                 <h3 class="tourmaster-tour-title">
-                                    <a href="#!/tour/1">Dubai – All Stunning Places</a>
+                                    <a href="#!/tour/{{item.id}}">{{item.name}}</a>
                                 </h3>
                                 <div class="price">
-                                    <span>$2,800</span>
+                                    <span>{{item.price}}</span>
                                 </div>
                                 <div class="tourmaster-tour-info-wrap clearfix">
                                     <div class="tourmaster-tour-info-duration-text">
                                         <i class="glyphicon glyphicon-time" style="color: #4692e7;"></i>
-                                        <span>9 Days 8 Nights</span>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3">
-                         <div class="popular-tour-item">
-                            <a href="#!/tour/1">
-                                <img src="imgs/shutterstock_151616084-700x450.jpg">
-                            </a>
-                            <div class="tourmaster-tour-content-wrap">
-                                <h3 class="tourmaster-tour-title">
-                                    <a href="#!/tour/1">Dubai – All Stunning Places</a>
-                                </h3>
-                                <div class="price">
-                                    <span>$2,800</span>
-                                </div>
-                                <div class="tourmaster-tour-info-wrap clearfix">
-                                    <div class="tourmaster-tour-info-duration-text">
-                                        <i class="glyphicon glyphicon-time" style="color: #4692e7;"></i>
-                                        <span>9 Days 8 Nights</span>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3">
-                         <div class="popular-tour-item">
-                            <a href="#!/tour/1">
-                                <img src="imgs/shutterstock_178807262-700x450.jpg">
-                            </a>
-                            <div class="tourmaster-tour-content-wrap">
-                                <h3 class="tourmaster-tour-title">
-                                    <a href="#!/tour/1">Dubai – All Stunning Places</a>
-                                </h3>
-                                <div class="price">
-                                    <span>$2,800</span>
-                                </div>
-                                <div class="tourmaster-tour-info-wrap clearfix">
-                                    <div class="tourmaster-tour-info-duration-text">
-                                        <i class="glyphicon glyphicon-time" style="color: #4692e7;"></i>
-                                        <span>9 Days 8 Nights</span>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3">
-                         <div class="popular-tour-item">
-                            <a href="#!/tour/1">
-                                <img src="imgs/shutterstock_178807262-700x450.jpg">
-                            </a>
-                            <div class="tourmaster-tour-content-wrap">
-                                <h3 class="tourmaster-tour-title">
-                                    <a href="#!/tour/1">Dubai – All Stunning Places</a>
-                                </h3>
-                                <div class="price">
-                                    <span>$2,800</span>
-                                </div>
-                                <div class="tourmaster-tour-info-wrap clearfix">
-                                    <div class="tourmaster-tour-info-duration-text">
-                                        <i class="glyphicon glyphicon-time" style="color: #4692e7;"></i>
-                                        <span>9 Days 8 Nights</span>
+                                        <span>{{item.availability}}</span>
                                     </div>
                                     
                                 </div>
@@ -214,7 +150,7 @@
             <div class="row margin_0">
                 <div ng-repeat="item in des">
                     <div class="col-md-3 m-col-md-5 col-sm-12 col-xs-12 margin_0 padding_0 item" ng-mouseover="showAllTours($event)" ng-mouseleave="hiddenAllTours($event)">
-                        <img src="{{item.des.img}}">
+                        <img ng-src="{{item.des.img}}">
                         <div class="tourmaster-tour-category-overlay"></div>
                         <div class="tourmaster-tour-category-head">
                             <div class="tourmaster-tour-category-head-display">
