@@ -11,7 +11,7 @@
 					<div class="row item">
 						<div class="col-md-3 col-sm-3 col-xs-12 padding_0">
 							<a href="#!/tour/{{item.id}}" title="">
-								<img src="{{item.img}}" alt="">
+								<img ng-src="{{item.img}}" alt="">
 							</a>	
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12 tour-detail-center">
@@ -24,7 +24,7 @@
 							</p>
 							<p class="tourmaster-tour-info-availability">
 								<i class="fa fa-calendar"></i>
-								Availability : Jan 16’ - Dec 16’
+								Availability : {{item.availability}}
 							</p>
 							<div class="itinerary">
 								{{item.overview}}
@@ -34,7 +34,7 @@
 						<div class="col-md-3 col-sm-3 col-xs-12 tour-detail-right">
 							<div class="tours-price">
 								<p class="price-value-dolar">{{item.price | currency}}</p>
-								<p class="price-value-vnd">{{item.price_vnd | currency: "VND"}}</p>
+								<p class="price-value-vnd">{{item.price_vnd | currency: "VND "}}</p>
 								<!-- <input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS"> -->
 								<a href="#!/tour/{{item.id}}" class="tours-details-btn">VIEW DETAILS</a>
 							</div>
@@ -49,7 +49,7 @@
 					<div ng-repeat="item in otherDes">
 						<div class="item">
 							<a href="#!/tours/{{item.des.id}}" title="">
-								<img src="{{item.des.img}}" alt="">
+								<img ng-src="{{item.des.img}}" alt="">
 							</a>
 							<div class="other-des-name">
 								<div class="other-des-name-value" style="float: left;">

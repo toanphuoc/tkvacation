@@ -1,9 +1,9 @@
 <link href="css/tour_detail.css" rel="stylesheet">
-<div class="tour-img-wapper">
+<div class="tour-img-wapper" ng-style="{'background-image': 'url(' + tour.img + ')'}">
     <div class="container">
     	<div class="row padding_30">
     		<div class="tour-name">
-    			<h3>Argentina – Great Diving Trip</h3>
+    			<h3>{{tour.name}}</h3>
     		</div>
     	</div>
     </div>
@@ -16,31 +16,29 @@
 					<div class="col-md-6 col-sm-6 col-xs-12 text-left padding_0">
 						<p>
 							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<span>2 Days 1 Nights</span>
+							<span>{{tour.period}}</span>
 						</p>
 						
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-12 text-left padding_0">
 						<p>
 							<i class="fa fa-calendar" aria-hidden="true"></i>						
-							Availability : Jan 16’ - Dec 16’
+							Availability : {{tour.availability}}
 						</p>
 						
 					</div>
 				</div>
 				<div class="row natigate-detail-info">
 					<div>
-						<a href="" class="active">Overview</a>
-						<a href="">Itineray</a>
+						<a href="javascript:void(0);" ng-click="scrollToOverview($event)" class="active overview">Overview</a>
+						<a href="javascript:void(0);" ng-click="scrollToItinerary($event)" class="itinerary">Itineray</a>
 						<!-- <a href="">Price</a> -->
 					</div>
 				</div>
 				<div class="row info-overview">
 					<h6>
 					<i class="fa fa-file-text-o" aria-hidden="true"></i>Tour Details</h6>
-					<div class="info-overview-content">
-						<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus.</p>
-						<p>Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum.</p>
+					<div class="info-overview-content" ng-bind-html="tour.overview">
 					</div>
 				</div>
 
@@ -48,26 +46,17 @@
 					<h6>
 					<i class="fa fa-bus" aria-hidden="true"></i>Itinerary</h6>
 					<div class="info-overview-content">
-						<div>
-							<h4>
-								<span>Day 1</span>
-								 Arrive in Zürich, Switzerland
-							</h4>
-							<p>
-							Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus.
-							</p>
+						<div ng-repeat="itinerary in itineraries">
+							<div>
+								<h4>
+									<span>Day {{$index+1}}</span>
+									{{itinerary.title}}
+								</h4>
+								<p ng-bind-html="itinerary.content">
+								
+								</p>
+							</div>
 						</div>
-						<div>
-							<h4>
-								<span>Day 2</span>
-								Zürich–Biel/Bienne–Neuchâtel–Geneva
-							</h4>
-							<p>
-							Enjoy an orientation walk of Zurich’s OLD TOWN, Switzerland’s center of banking and commerce. Then, leave Zurich and start your Swiss adventure. You’ll quickly discover that Switzerland isn’t just home to the Alps, but also to some of the most beautiful lakes. First, stop at the foot of the Jura Mountains in the picturesque town of Biel, known as Bienne by French-speaking Swiss, famous for watch-making, and explore the historical center. Next, enjoy a scenic drive to lakeside Neuchâtel, dominated by the medieval cathedral and castle. Time to stroll along the lake promenade before continuing to stunning Geneva, the second-largest city in Switzerland, with its fantastic lakeside location and breathtaking panoramas of the Alps.
-							</p>
-						</div>
-
-						
 					</div>
 				</div>
 			</div>
@@ -78,8 +67,8 @@
 					<i class="fa fa-credit-card" style="color: #fff; font-size: 30px; line-height: 90px;"></i>
 				</div>
 				<div class="col-md-9 col-md-sm-9 col-xs-9">
-					<p>$1,200</p>
-					<p style="font-size: 16px; font-weight: 600;">VND 2,200,000</p>
+					<p>{{tour.price | currency}}</p>
+					<p style="font-size: 16px; font-weight: 600;">{{tour.price_vnd | currency: "VND "}}</p>
 				</div>
 			</div>
 				<div class="row margin_0">

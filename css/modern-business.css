@@ -229,6 +229,7 @@ header.carousel .fill {
     font-size: 14px;
     font-weight: 800;
     margin-bottom: 5px;
+    min-height: 30px;
 }
 
 .popular-tour-item{
@@ -296,6 +297,7 @@ header.carousel .fill {
 .popular-tour-item img{
     width: 100%;
     height: auto;
+    max-height: 300px;
 }
 
 .search-group label{
