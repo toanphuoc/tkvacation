@@ -22,12 +22,8 @@
 			    	<div style="position: relative; ">
 		                <select class="form-control">
 		                    <option value="">Any</option>
-		                    <option value="africa">Africa</option>
-		                    <option value="america">America</option>
-		                    <option value="asia">Asia</option>
-		                    <option value="eastern-europe">Eastern Europe</option>
-		                    <option value="europe">Europe</option>
-		                    <option value="south-america">South America</option>
+		                    <option ng-repeat="item in destinations" value="{{item.des.id}}">{{item.des.title}}</option>
+		                    
 		                </select>
 	                </div>
 			  	</div>
@@ -53,270 +49,49 @@
 			  	</div>
 			</div>
 			<div class="col-md-9 col-sm-12 col-xs-12 tours-des">
-				<div class="row item">
+
+
+				<div class="row item" ng-repeat="item in tours">
 					<div class="col-md-3 col-sm-3 col-xs-12 padding_0">
-						<a href="#!/tour/12" title="">
-							<img src="imgs/shutterstock_61340065-600x700.jpg" alt="">
+						<a href="#!/tour/{{item.id}}" title="">
+							<img ng-src="{{item.img}}" alt="">
 						</a>	
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-12 tour-detail-center">
 						<h3 class="name">
-							<a class="name-text" href="" title="">Argentina – Great Diving Trip</a>
+							<a class="name-text" href="#!/tour/{{item.id}}" title="">{{item.name}}</a>
 						</h3>
 						<p class="tourmaster-tour-info-duration-text">
 							<i class="fa fa-clock-o"></i>
-							2 Days 1 Nights
+							{{item.period}}
 						</p>
 						<p class="tourmaster-tour-info-availability">
 							<i class="fa fa-calendar"></i>
-							Availability : Jan 16’ - Dec 16’
+							Availability : {{item.availability}}
 						</p>
-						<div class="itinerary">
-							Pu Luong nature reserve is all about nature and deeply rooted ethnic cultures. This trip offers a wide array of natural sceneries: jungle, terraced rice fields, forested. Pu Luong nature reserve is all about nature and deeply rooted ethnic cultures. This trip offers a wide array of natural sceneries: jungle, terraced rice fields, forested...
-						
-							<!-- <p class="itinerary">
-								Pu Luong nature reserve is all about nature and deeply rooted ethnic cultures. This trip offers a wide array of natural sceneries: jungle, terraced rice fields, forested...
-							</p> -->
+						<div class="itinerary" ng-bind-html="item.overview">
+							
 						</div>
 						
 					</div>
 					<div class="col-md-3 col-sm-3 col-xs-12 tour-detail-right">
 						<div class="tours-price">
-							<p class="price-value-dolar">$1,200</p>
-							<p class="price-value-vnd">2.000.000 VND</p>
-							<input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS">
+							<p class="price-value-dolar">{{item.price | currency}}</p>
+							<p class="price-value-vnd">{{item.price_vnd | currency: "VND "}}</p>
+							<!-- <input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS"> -->
+							<a href="#!/tour/{{item.id}}" class="tours-details-btn">VIEW DETAILS</a>
 						</div>
 
 					</div>
 				</div>
-				<div class="row item">
-					<div class="col-md-3 col-sm-3 col-xs-12 padding_0">
-						<a href="" title="">
-							<img src="imgs/shutterstock_61340065-600x700.jpg" alt="">
-						</a>	
-					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 tour-detail-center">
-						<h3 class="name">
-							<a class="name-text" href="" title="">Argentina – Great Diving Trip</a>
-						</h3>
-						<p class="tourmaster-tour-info-duration-text">
-							<i class="fa fa-clock-o"></i>
-							2 Days 1 Nights
-						</p>
-						<p class="tourmaster-tour-info-availability">
-							<i class="fa fa-calendar"></i>
-							Availability : Jan 16’ - Dec 16’
-						</p>
-						<p class="itinerary">
-							Pu Luong nature reserve is all about nature and deeply rooted ethnic cultures. This trip offers a wide array of natural sceneries: jungle, terraced rice fields, forested...
-						</p>
-					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12 tour-detail-right">
-						<div class="tours-price">
-							<p class="price-value-dolar">$1,200</p>
-							<p class="price-value-vnd">2.000.000 VND</p>
-							<input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS">
-						</div>
-
-					</div>
-				</div>
-					<div class="row item">
-					<div class="col-md-3 col-sm-3 col-xs-12 padding_0">
-						<a href="" title="">
-							<img src="imgs/shutterstock_61340065-600x700.jpg" alt="">
-						</a>	
-					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 tour-detail-center">
-						<h3 class="name">
-							<a class="name-text" href="" title="">Argentina – Great Diving Trip</a>
-						</h3>
-						<p class="tourmaster-tour-info-duration-text">
-							<i class="fa fa-clock-o"></i>
-							2 Days 1 Nights
-						</p>
-						<p class="tourmaster-tour-info-availability">
-							<i class="fa fa-calendar"></i>
-							Availability : Jan 16’ - Dec 16’
-						</p>
-						<p class="itinerary">
-							Pu Luong nature reserve is all about nature and deeply rooted ethnic cultures. This trip offers a wide array of natural sceneries: jungle, terraced rice fields, forested...
-						</p>
-					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12 tour-detail-right">
-						<div class="tours-price">
-							<p class="price-value-dolar">$1,200</p>
-							<p class="price-value-vnd">2.000.000 VND</p>
-							<input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS">
-						</div>
-
-					</div>
-				</div>
-					<div class="row item">
-					<div class="col-md-3 col-sm-3 col-xs-12 padding_0">
-						<a href="" title="">
-							<img src="imgs/shutterstock_61340065-600x700.jpg" alt="">
-						</a>	
-					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 tour-detail-center">
-						<h3 class="name">
-							<a class="name-text" href="" title="">Argentina – Great Diving Trip</a>
-						</h3>
-						<p class="tourmaster-tour-info-duration-text">
-							<i class="fa fa-clock-o"></i>
-							2 Days 1 Nights
-						</p>
-						<p class="tourmaster-tour-info-availability">
-							<i class="fa fa-calendar"></i>
-							Availability : Jan 16’ - Dec 16’
-						</p>
-						<p class="itinerary">
-							Pu Luong nature reserve is all about nature and deeply rooted ethnic cultures. This trip offers a wide array of natural sceneries: jungle, terraced rice fields, forested...
-						</p>
-					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12 tour-detail-right">
-						<div class="tours-price">
-							<p class="price-value-dolar">$1,200</p>
-							<p class="price-value-vnd">2.000.000 VND</p>
-							<input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS">
-						</div>
-
-					</div>
-				</div>
-					<div class="row item">
-					<div class="col-md-3 col-sm-3 col-xs-12 padding_0">
-						<a href="" title="">
-							<img src="imgs/shutterstock_61340065-600x700.jpg" alt="">
-						</a>	
-					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 tour-detail-center">
-						<h3 class="name">
-							<a class="name-text" href="" title="">Argentina – Great Diving Trip</a>
-						</h3>
-						<p class="tourmaster-tour-info-duration-text">
-							<i class="fa fa-clock-o"></i>
-							2 Days 1 Nights
-						</p>
-						<p class="tourmaster-tour-info-availability">
-							<i class="fa fa-calendar"></i>
-							Availability : Jan 16’ - Dec 16’
-						</p>
-						<p class="itinerary">
-							Pu Luong nature reserve is all about nature and deeply rooted ethnic cultures. This trip offers a wide array of natural sceneries: jungle, terraced rice fields, forested...
-						</p>
-					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12 tour-detail-right">
-						<div class="tours-price">
-							<p class="price-value-dolar">$1,200</p>
-							<p class="price-value-vnd">2.000.000 VND</p>
-							<input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS">
-						</div>
-
-					</div>
+				<div class="row text-right" ng-show="pagin.length > 1">
+					<ul class="pagination search_pagination">
+						<li ng-repeat="p in pagin track by $index" ng-class="$index + 1 == currentPage ? 'active' : ''">
+							<a href="#!/search?page={{$index+1}}">{{$index + 1}}</a>
+						</li>
+					</ul>
 				</div>
 			</div>
-			<!-- <div class="col-md-3 col-sm-12 col-xs-12">
-				<div class="other-destinations">
-					<h3 style="margin-top: 0;" >Other destinations</h3>	
-					<div class="item">
-						<a href="" title="">
-							<img src="imgs/shutterstock_151616084-700x450.jpg" alt="">
-						</a>
-						<div class="other-des-name">
-							<div class="other-des-name-value" style="float: left;">
-								ASSI
-							</div>
-							<div style="float: right;">
-								3 tours
-							</div>
-							<div class="clearfix">
-								
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<a href="" title="">
-							<img src="imgs/shutterstock_151616084-700x450.jpg" alt="">
-						</a>
-						<div class="other-des-name">
-							<div class="other-des-name-value" style="float: left;">
-								ASSI
-							</div>
-							<div style="float: right;">
-								3 tours
-							</div>
-							<div class="clearfix">
-								
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<a href="" title="">
-							<img src="imgs/shutterstock_151616084-700x450.jpg" alt="">
-						</a>
-						<div class="other-des-name">
-							<div class="other-des-name-value" style="float: left;">
-								ASSI
-							</div>
-							<div style="float: right;">
-								3 tours
-							</div>
-							<div class="clearfix">
-								
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<a href="" title="">
-							<img src="imgs/shutterstock_151616084-700x450.jpg" alt="">
-						</a>
-						<div class="other-des-name">
-							<div class="other-des-name-value" style="float: left;">
-								ASSI
-							</div>
-							<div style="float: right;">
-								3 tours
-							</div>
-							<div class="clearfix">
-								
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<a href="" title="">
-							<img src="imgs/shutterstock_151616084-700x450.jpg" alt="">
-						</a>
-						<div class="other-des-name">
-							<div class="other-des-name-value" style="float: left;">
-								ASSI
-							</div>
-							<div style="float: right;">
-								3 tours
-							</div>
-							<div class="clearfix">
-								
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<a href="" title="">
-							<img src="imgs/shutterstock_151616084-700x450.jpg" alt="">
-						</a>
-						<div class="other-des-name">
-							<div class="other-des-name-value" style="float: left;">
-								ASSI
-							</div>
-							<div style="float: right;">
-								3 tours
-							</div>
-							<div class="clearfix">
-								
-							</div>
-						</div>
-					</div>
-				</div>
-				
-
-			</div> -->
 		</div>	
 	</div>
 </div>

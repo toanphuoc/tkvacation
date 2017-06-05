@@ -15,11 +15,34 @@ app.controller('HomeController', function ($scope, $location, $http) {
 		$location.path('/search').search({'key': 'Sapa'});
 	}
 	
+	/**
+		Get popular desetination
+	*/
 	$http({
 		method: 'GET',
 		url: BASE_URL + 'destination/getPopularDestination'
 	}).then(function successCallback(response){
 		$scope.des = response.data;
+	});
+
+	/**
+		Get popular tours
+	*/
+	$http({
+		method: 'GET',
+		url: BASE_URL + 'tour/getPopularTour'
+	}).then(function successCallback(response){
+		$scope.popularTours = response.data;
+	});
+
+	/**
+		Get all destination
+	*/
+	$http({
+		method: 'GET',
+		url: BASE_URL + 'destination/list'
+	}).then(function success(response){
+		$scope.destinations = response.data;
 	});
 
 	$scope.showAllTours = function($event){
@@ -32,12 +55,6 @@ app.controller('HomeController', function ($scope, $location, $http) {
 		$(ele).find('.view-all').addClass("hidden");
 	}
 
-	//Get popular tours
-	$http({
-		method: 'GET',
-		url: BASE_URL + 'tour/getPopularTour'
-	}).then(function successCallback(response){
-		$scope.popularTours = response.data;
-	});
+
 
 });

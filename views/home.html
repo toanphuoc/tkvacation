@@ -57,12 +57,7 @@
                          <div style="position: relative; ">
                         <select class="form-control">
                             <option value="">Any</option>
-                            <option value="africa">Africa</option>
-                            <option value="america">America</option>
-                            <option value="asia">Asia</option>
-                            <option value="eastern-europe">Eastern Europe</option>
-                            <option value="europe">Europe</option>
-                            <option value="south-america">South America</option>
+                            <option ng-repeat="item in destinations" value="{{item.des.id}}">{{item.des.title}}</option>
                         </select>
                         </div>
                     </div>

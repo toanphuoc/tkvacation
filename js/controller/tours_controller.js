@@ -3,7 +3,7 @@ app.controller('DestinationTourController', function ($scope, $routeParams, $htt
 	
 	$http({
 		method: 'GET',
-		url: BASE_URL + 'tour/GetTourByDestination/' + id
+		url: BASE_URL + 'tour/getTourByDestination/' + id
 	}).then(function successCallback(response){
 		$scope.data = response.data;
 	});
