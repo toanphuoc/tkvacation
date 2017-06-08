@@ -1,38 +1,32 @@
  <header id="myCarousel" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="$index" ng-repeat="item in popularTours" ng-class="$first ? 'active': ''"></li>
+       <!--  <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li> -->
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-        <div class="item active">
+
+        <div ng-repeat="item in popularTours" class="item" ng-class="$first ? 'active': ''">
+            <div class="fill" ng-style="{'background-image': 'url(' + item.img + ')'}"></div>
+            <div class="carousel-caption caption-text">
+                <p>Special</p>
+                <h1>{{item.period}} in {{item.name}}</h1>
+                <!-- <input type="button" name="" value="LEARN MORE"> -->
+                <a href="#!/tour/{{item.id}}">LEARN MORE</a>
+            </div>
+        </div>
+
+        <!-- <div class="item active">
             <div class="fill" style="background-image:url('imgs/shutterstock_94851763-700x450.jpg');"></div>
             <div class="carousel-caption caption-text">
                 <p>Special</p>
                 <h1>7 Days in Sapa</h1>
-                <!-- <input type="button" name="" value="LEARN MORE"> -->
                 <a href="#!/tour/1">LEARN MORE</a>
             </div>
-        </div>
-        <div class="item">
-            <div class="fill" style="background-image:url('imgs/slider-2.jpg');"></div>
-            <div class="carousel-caption caption-text">
-               <p>Special</p>
-               <h1>7 Days in Switzerland</h1>
-               <a href="#!/tour/1">LEARN MORE</a>
-            </div>
-        </div>
-        <div class="item">
-            <div class="fill" style="background-image:url('imgs/slider-3.jpg');"></div>
-            <div class="carousel-caption caption-text">
-                <p>Special</p>
-                <h1>7 Days in Switzerland</h1>
-                <a href="#!/tour/1">LEARN MORE</a>
-            </div>
-        </div>
+        </div> -->
     </div>
 
     <!-- Controls -->
@@ -105,9 +99,12 @@
 
                     <div class="col-md-3 col-sm-3" ng-repeat="item in popularTours">
                         <div class="popular-tour-item">
-                            <a href="#!/tour/{{item.id}}">
-                                <img ng-src="{{item.img}}">
-                            </a>
+                            <div class="popular-tour-item-img">
+                                <a href="#!/tour/{{item.id}}">
+                                    <img ng-src="{{item.img}}">
+                                </a>
+                            </div>
+                            
                             <div class="tourmaster-tour-content-wrap">
                                 <h3 class="tourmaster-tour-title">
                                     <a href="#!/tour/{{item.id}}">{{item.name}}</a>
@@ -146,6 +143,7 @@
                 <div ng-repeat="item in des">
                     <div class="col-md-3 m-col-md-5 col-sm-12 col-xs-12 margin_0 padding_0 item" ng-mouseover="showAllTours($event)" ng-mouseleave="hiddenAllTours($event)">
                         <img ng-src="{{item.des.img}}">
+                        <div class="category-overlay hidden"></div>
                         <div class="tourmaster-tour-category-overlay"></div>
                         <div class="tourmaster-tour-category-head">
                             <div class="tourmaster-tour-category-head-display">
