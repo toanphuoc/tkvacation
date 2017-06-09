@@ -22,4 +22,8 @@ app.controller('SearchController', function ($scope, $location, $routeParams, $h
 	}).then(function success(response){
 		$scope.destinations = response.data;
 	});
+
+	$scope.search = function(){
+		
+	};
 });

@@ -20,14 +20,14 @@
 							</h3>
 							<p class="tourmaster-tour-info-duration-text">
 								<i class="fa fa-clock-o"></i>
-								{{item.period}}
+								{{item.period}} {{item.period > 1 ? 'days' : 'day'}}
 							</p>
 							<p class="tourmaster-tour-info-availability">
 								<i class="fa fa-calendar"></i>
 								Availability : {{item.availability}}
 							</p>
-							<div class="itinerary">
-								{{item.overview}}
+							<div class="itinerary" ng-bind-html="item.overview">
+			
 							</div>
 							
 						</div>

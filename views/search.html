@@ -32,16 +32,24 @@
 			    	<div style="position: relative; ">
 		                <select class="form-control">
 		                   	<option value="">Any</option>
-		                   	<option value="1">1 Day Tour</option>
-		                   	<option value="2">2-4 Days Tour</option>
-		                   	<option value="5">5-7 Days Tour</option>
-		                   	<option value="7">7+ Days Tour</option>
+		                   	<option value="1" min="1" max="1">1 Day Tour</option>
+		                   	<option value="2" min="2" max="4">2-4 Days Tour</option>
+		                   	<option value="5" min="5" max="7">5-7 Days Tour</option>
+		                   	<option value="7" max="7">7+ Days Tour</option>
 		                </select>
 	                </div>
 			  	</div>
 			  	<div class="form-group">
-			    	<label for="exampleInputEmail1">Date</label>
-			    	<input type="email" class="form-control" id="exampleInputEmail1">
+			    	<label for="exampleInputEmail1">Price</label>
+			    	<div style="position: relative; ">
+		                <select class="form-control">
+		                   	<option value="">Any</option>
+		                   	<option value="1">$0 - $100</option>
+		                   	<option value="2">$100 - $200</option>
+		                   	<option value="5">$200 - $500</option>
+		                   	<option value="7">$500 +</option>
+		                </select>
+	                </div>
 			  	</div>
 			  	<div class="form-group">
 			  	 	<input class="form-control search-btn" type="button" value="SEARCH" name="" ng-click="search()">
@@ -51,7 +59,7 @@
 			<div class="col-md-9 col-sm-12 col-xs-12 tours-des">
 
 
-				<div class="row item" ng-repeat="item in tours">
+				<div class="row item" ng-repeat="item in tours" ng-show="tours.length > 0">
 					<div class="col-md-3 col-sm-3 col-xs-12 padding_0 item_img">
 						<a href="#!/tour/{{item.id}}" title="">
 							<img ng-src="{{item.img}}" alt="">

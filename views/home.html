@@ -13,7 +13,7 @@
             <div class="fill" ng-style="{'background-image': 'url(' + item.img + ')'}"></div>
             <div class="carousel-caption caption-text">
                 <p>Special</p>
-                <h1>{{item.period}} in {{item.name}}</h1>
+                <h1>{{item.period}} {{item.period > 1 ? 'days' : 'day'}} in {{item.name}}</h1>
                 <!-- <input type="button" name="" value="LEARN MORE"> -->
                 <a href="#!/tour/{{item.id}}">LEARN MORE</a>
             </div>
@@ -110,7 +110,7 @@
                                     <a href="#!/tour/{{item.id}}">{{item.name}}</a>
                                 </h3>
                                 <div class="price">
-                                    <span>{{item.price}}</span>
+                                    <span>{{item.price | currency}}</span>
                                 </div>
                                 <div class="tourmaster-tour-info-wrap clearfix">
                                     <div class="tourmaster-tour-info-duration-text">
