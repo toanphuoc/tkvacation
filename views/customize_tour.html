@@ -1,4 +1,13 @@
 <link rel="stylesheet" type="text/css" href="css/customize_tour.css">
+<style type="text/css">
+	.message_error{
+		color: #a94442;
+	}
+
+	.message_success{
+		color: #3c763d;
+	}
+</style>
 <div class="tour-img-wapper">
     <div class="container">
     	<div class="row padding_30">
@@ -16,48 +25,89 @@
 				<h6 class="title">
 				<i class="fa fa-file-text-o" aria-hidden="true"></i>Travaller Information
 				</h6>
-				<div class="form_group-traveller">
-					<div class="form-group">
-					    <label for="inputEmail3" class="control-label">Full name</label>
-					    <input type="text" class="form-control" id="inputEmail3" placeholder="Full name">
-				  	</div>
-				  	<div class="form-group">
-					    <label for="inputPassword3" class="control-label">Email</label>
-					    <input type="email" class="form-control" id="inputPassword3" placeholder="Email">
-				  	</div>
-				  	<div class="form-group">
-					    <label for="inputPassword3" class="control-label">Phone number</label>
-					    <input type="email" class="form-control" id="inputPassword3" placeholder="Phone number">
-				  	</div>
-					<div class="form-group">
-					    <label for="inputPassword3" class="control-label">Nationality</label>
-					    <input type="text" class="form-control" id="inputPassword3" placeholder="Nationality">
-				  	</div>
-
-				  	<h6 class="title">
-						<i class="fa fa-file-text-o" aria-hidden="true"></i>Destinations you would like to include
-					</h6>
-				  	<div class="form-group">
-					    <label for="inputEmail3" class="control-label">Destination</label>
-					   
-					    <input type="text" class="form-control" id="inputEmail3" placeholder="Destination">
-				  	</div>
-				  	<div class="form-group">
-						    <label for="inputPassword3" class="control-label">Estimated arrival date</label>
-						    <input type="text" class="form-control" id="inputPassword3" placeholder="Estimated arrival date">
+				<form name="customize_form" novalidate>
+					<div class="form_group-traveller">
+						<div class="form-group">
+						    <label class="control-label">Full name</label>
+						    <input type="text" class="form-control" placeholder="Full name" ng-model="customize.name" name="name" required>
+						    <span ng-show="submitted && customize_form.name.$error.required" class="message_error">
+						      	Please enter full name.
+						    </span>
 					  	</div>
 					  	<div class="form-group">
-						    <label for="inputPassword3" class="control-label">Estimated travel duration</label>
-						    <input type="text" class="form-control" id="inputPassword3" placeholder="Estimated travel duration (hour)">
+						    <label for="inputPassword3" class="control-label">Email</label>
+						    <input type="email" name="email" class="form-control" placeholder="Email" ng-model="customize.email" required>
+
+						    <span ng-show="submitted && customize_form.email.$error.required" class="message_error">
+						      	Please enter email.
+						    </span>
+						    <span ng-show="submitted && customize_form.email.$error.email" class="message_error">
+						      	Email is invalid.
+						    </span>
 					  	</div>
-				  	<div class="form-group">
-					    <label for="inputPassword3" class="control-label">Do you have any plans or ideas yet?</label>
-					    <textarea class="form-control" rows="5"></textarea>
-				  	</div>
-				  	<div class="form-group">
-					   <button type="submit" class="btn btn-default send">SEND</button>
-				  	</div>
-				</div>
+					  	<div class="form-group">
+						    <label for="inputPassword3" class="control-label">Phone number</label>
+						    <input type="text" class="form-control" placeholder="Phone number" ng-model="customize.phone_number" name="phone" required>
+
+							<span ng-show="submitted && customize_form.phone.$error.required" class="message_error">
+						      	Please enter phone number.
+						   	</span>
+						   <!-- 	<span ng-show="submitted && customize_form.phone.$error.number" class="message_error">
+						      	The phone number is invalid.
+						   	</span> -->
+					  	</div>
+						<div class="form-group">
+						    <label for="inputPassword3" class="control-label">Nationality</label>
+						    <input type="text" class="form-control" placeholder="Nationality" ng-model="customize.nationality" name="nationality" required>
+
+						    <span ng-show="submitted && customize_form.nationality.$error.required" class="message_error">
+						      	Please enter the nationality.
+						   	</span>
+					  	</div>
+
+					  	<h6 class="title">
+							<i class="fa fa-file-text-o" aria-hidden="true"></i>Destinations you would like to include
+						</h6>
+					  	<div class="form-group">
+						    <label for="inputEmail3" class="control-label">Destination</label>
+						   
+						    <input type="text" class="form-control" placeholder="Destination" ng-model="customize.destination" name="destination" required>
+
+						    <span ng-show="submitted && customize_form.destination.$error.required" class="message_error">
+						      	Please enter the destination.
+						   	</span>
+					  	</div>
+					  	<div class="form-group">
+							    <label for="inputPassword3" class="control-label">Estimated arrival date</label>
+							    <input type="text" class="form-control" placeholder="Estimated arrival date" id="datepicker" ng-model="customize.estimate_date_start" name="estimation_arrival_start" required>
+
+							    <span ng-show="submitted && customize_form.estimation_arrival_start.$error.required" class="message_error">
+						      	Please select start arrival date.
+						   		</span>
+						  	</div>
+						  	<div class="form-group">
+							    <label for="inputPassword3" class="control-label">Estimated travel duration</label>
+							    <input type="number" class="form-control" placeholder="Estimated travel duration (day)" ng-model="customize.estimate_duration" name="estimate_duration" required>
+							    <span ng-show="submitted && customize_form.estimate_duration.$error.required" class="message_error">
+						      	Please enter the estimate duration.
+						   		</span>
+						   		<span ng-show="submitted && customize_form.estimate_duration.$error.number" class="message_error">
+						      	The estimate duration is invalid.
+						   	</span>
+						  	</div>
+					  	<div class="form-group">
+						    <label for="inputPassword3" class="control-label">Do you have any plans or ideas yet?</label>
+						    <textarea class="form-control" rows="5" ng-model="customize.ideas" name="ideas"></textarea>
+						   
+					  	</div>
+					  	<div class="form-group">
+						   <button type="submit" class="btn btn-default send" ng-click="send()">SEND</button>
+					  	</div>
+					  	<div class="form-group">
+					  		 <span class="message_success" ng-show="message_success">The request has been sent successfully.</span>
+					  	</div>
+					</div>
+				</form>
 			</div>
 			<div class="col-md-2 col-sm-2 col-xs-12 padding_0"></div>
 		</div>

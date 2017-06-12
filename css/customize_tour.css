@@ -69,6 +69,10 @@
     border-radius: 0;
 }
 
+.customize_tour .send:disable{
+    cursor: default;
+}
+
 @media(min-width: 768px){
     .customize_tour label{
 
