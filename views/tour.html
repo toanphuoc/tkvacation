@@ -1,4 +1,17 @@
-<link href="css/tour_detail.css" rel="stylesheet">
+<link href="css/tour_detail.css?version=1.1" rel="stylesheet">
+<style type="text/css">
+	.message_error{
+		color: #a94442;
+	    text-align: left;
+	    display: block;
+	    font-size: 13px;
+	    margin-top: 2px;
+	}
+
+	.message_success{
+		color: #3c763d;
+	}
+</style>
 <div class="tour-img-wapper" ng-style="{'background-image': 'url(' + tour.img + ')'}">
     <div class="container">
     	<div class="row padding_30">
@@ -11,7 +24,7 @@
 <div class="tour">
 	<div class="container">
 		<div class="row padding_30">
-			<div class="col-md-9 col-sm-9 col-xs-12 info">
+			<div class="col-md-9 col-sm-7 col-xs-12 info">
 				<div class="row tour-info-top">
 					<div class="col-md-6 col-sm-6 col-xs-12 text-left padding_0">
 						<p>
@@ -60,44 +73,52 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-3 col-xs-12 booking text-center">
+			<div class="col-md-3 col-sm-5 col-xs-12 booking text-center">
 
-			<div class="row margin_0 price">
-				<div class="col-md-3 col-md-sm-3 col-xs-3">
-					<i class="fa fa-credit-card" style="color: #fff; font-size: 30px; line-height: 90px;"></i>
-				</div>
-				<div class="col-md-9 col-md-sm-9 col-xs-9">
-					<p>{{tour.price | currency}}</p>
-					<p style="font-size: 16px; font-weight: 600;">{{tour.price_vnd | currency: "VND "}}</p>
-				</div>
-			</div>
-				<div class="row margin_0">
-					<div class="col-md-2 col-md-sm-2 col-xs-2">
-						<i class="fa fa-calendar"></i>	
+				<div class="row margin_0 price">
+					<div class="col-md-3 col-md-sm-3 col-xs-3">
+						<i class="fa fa-credit-card" style="color: #fff; font-size: 30px; line-height: 90px;"></i>
 					</div>
-					<div class="col-md-10 col-md-sm-10 col-xs-10 start-date-value">
-						<input type="text" class="num-of-people-input" value="October 8, 2022" name="" placeholder="Number of people">
+					<div class="col-md-9 col-md-sm-9 col-xs-9">
+						<p>{{tour.price | currency}}</p>
+						<p style="font-size: 16px; font-weight: 600;">{{tour.price_vnd | currency: "VND "}}</p>
+					</div>
+				</div>
+				<form name="booking_form">
+					<div class="row margin_0">
+						<div class="col-md-2 col-md-sm-2 col-xs-2">
+							<i class="fa fa-calendar"></i>	
+						</div>
+						<div class="col-md-10 col-md-sm-10 col-xs-10 start-date-value">
+							<input type="text" class="num-of-people-input" value="" name="start_of_date" ng-model="booking.start_date" id="datepicker" required>
+							<span ng-show="submitted && booking_form.start_of_date.$error.required" class="message_error">
+						      	Please select start date.
+						    </span>
+							
+						</div>
+					</div>
+					<div class="row margin_0">
+						<div class="col-md-2 col-md-sm-2 col-xs-2">
+							<i class="fa fa fa-users"></i>
+						</div>
+						<div class="col-md-10 col-md-sm-10 col-xs-10">
+							<input type="number" class="num-of-people-input" name="number_of_people" placeholder="Number of people" ng-model="booking.number_of_people" required>
+							<span ng-show="submitted && booking_form.number_of_people.$error.required" class="message_error">
+						      	Please enter number of people.
+						    </span>
+						</div>
+					</div>
+					<div class="row margin_0 booking-footer">
+						<div class="col-md-2 col-md-sm-2 col-xs-2">
+							<i class="fa fa-check-circle"></i>
+						</div>
+						<div class="col-md-10 col-md-sm-10 col-xs-10">
+							<!-- <a href="#!/booking/1/05-17-2017/12" class="submit">PROCEED BOOKING</a> -->
+							<input type="button" class="submit" name="" value="PROCEED BOOKING" ng-click="bookingTour()">
+						</div>
 						
 					</div>
-				</div>
-				<div class="row margin_0">
-					<div class="col-md-2 col-md-sm-2 col-xs-2">
-						<i class="fa fa fa-users"></i>
-					</div>
-					<div class="col-md-10 col-md-sm-10 col-xs-10">
-						<input type="number" class="num-of-people-input" name="" placeholder="Number of people">
-					</div>
-				</div>
-				<div class="row margin_0 booking-footer">
-					<div class="col-md-2 col-md-sm-2 col-xs-2">
-						<i class="fa fa-check-circle"></i>
-					</div>
-					<div class="col-md-10 col-md-sm-10 col-xs-10">
-						<a href="#!/booking/1/05-17-2017/12" class="submit">PROCEED BOOKING</a>
-						<!-- <input type="button" class="submit" name="" value="PROCEED BOOKING">		 -->
-					</div>
-					
-				</div>
+				</form>
 			</div>
 
 		</div>

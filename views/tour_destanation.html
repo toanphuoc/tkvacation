@@ -1,4 +1,4 @@
-<link href="css/tours.css" rel="stylesheet">
+<link href="css/tours.css?version=1.1" rel="stylesheet">
 <div class="about-img-wapper text-center" ng-style="{'background-image': 'url(' + data.des.img + ')'}">
     <h1>Destination</h1>
     <h3>{{data.des.title}}</h3>
@@ -45,8 +45,27 @@
 			</div>
 			<div class="col-md-3 col-sm-12 col-xs-12">
 				<div class="other-destinations">
-					<h3>Other destinations</h3>	
-					<div ng-repeat="item in otherDes">
+					<h3>Other destinations</h3>
+						<div class="row margin_0">
+							<div class="col-md-12 col-sm-6 col-xs-12 padding_0 item" ng-repeat="item in otherDes">
+								<a href="#!/tours/{{item.des.id}}" title="">
+									<img ng-src="{{item.des.img}}" alt="">
+								</a>
+								<div class="other-des-name">
+									<div class="other-des-name-value" style="float: left;">
+										<a href="#!/tours/{{item.des.id}}" title="">{{item.des.title}}</a>
+										
+									</div>
+									<div style="float: right;">
+										{{item.totalTours}} {{item.totalTours > 1 ? 'Tours' : 'Tour'}}
+									</div>
+									<div class="clearfix">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					<!-- <div ng-repeat="item in otherDes">
 						<div class="item">
 							<a href="#!/tours/{{item.des.id}}" title="">
 								<img ng-src="{{item.des.img}}" alt="">
@@ -64,7 +83,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>	

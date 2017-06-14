@@ -1,4 +1,4 @@
-app.controller('TourController', function ($scope, $routeParams, $http) {
+app.controller('TourController', function ($scope, $routeParams, $http, $location) {
 	var id = $routeParams.tourId;
 
 	$http({
@@ -25,4 +25,21 @@ app.controller('TourController', function ($scope, $routeParams, $http) {
             scrollTop: $(".info-itenirary").offset().top - 90
         }, 500);
 	}
+
+	$('#datepicker').datepicker({
+		autoSize: true, 
+		closeText: "Close", 
+		defaultDate: new Date(),
+		dateFormat: 'mm-dd-yy'
+	});
+
+	$scope.booking = {};
+ 	$scope.bookingTour = function(){
+ 		$scope.submitted = true;
+ 		if(!$scope.booking_form.$valid) {
+	       	return;
+	    }
+
+	    $location.path('/booking').search({tourId: id, start_date: $scope.booking.start_date, number_of_people: $scope.booking.number_of_people});
+ 	}
 });

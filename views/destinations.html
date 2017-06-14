@@ -1,11 +1,10 @@
-<link rel="stylesheet" type="text/css" href="css/destinations.css">
+<link rel="stylesheet" type="text/css" href="css/destinations.css?version=1.1">
 <div class="about-img-wapper text-center">
     <h1>Destinations</h1>  
 </div>
 <div class="container destinations">
 	<div class="row margin_0">
-		<div ng-repeat="item in des">
-			<div class="col-md-4 col-sm-4 col-xs-12" ng-mouseover="showAllTours($event)" ng-mouseleave="hiddenAllTours($event)">
+			<div class="col-md-4 col-sm-6" ng-repeat="item in des" ng-mouseover="showAllTours($event)" ng-mouseleave="hiddenAllTours($event)">
 				<div style="" class="item">
 					<img ng-src="{{item.des.img}}">
 					<div class="category-overlay hidden"></div>
@@ -28,6 +27,5 @@
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
 </div>

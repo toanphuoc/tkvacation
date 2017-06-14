@@ -1,6 +1,7 @@
 app.controller('SearchController', function ($scope, $location, $routeParams, $http) {
 
 	var page = $routeParams.page;
+	if(page === undefined) page = 1;
 	$scope.currentPage = page;
 
 	$http({

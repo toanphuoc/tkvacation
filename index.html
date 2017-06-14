@@ -15,7 +15,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/modern-business.css?v=1.1" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -155,24 +155,26 @@
     <script type="text/javascript" src="js/controller/tours_controller.js"></script>
     <script type="text/javascript" src="js/controller/tour_detail_controller.js"></script>
     <script type="text/javascript" src="js/controller/booking_controller.js"></script>
+    <script type="text/javascript" src="js/controller/booking_success_controller.js"></script>
     <script type="text/javascript" src="js/controller/search_controller.js"></script>
     <script type="text/javascript" src="js/controller/customize_controller.js"></script>
 
     <script>
 
-        $('.menu a').hover(function(){
+        $('.menu a').click(function(){
            var parent = $(this).parent().parent();
            var ele = $(parent).find('.active');
-           console.log($(ele).text());
            $(ele).removeClass('active');
+
+           $(this).addClass('active');
         });
 
         $(window).scroll(function () { 
             if ($(this).scrollTop() < 100) {
-                $(".traveltour-top-bar").removeClass("hidden", 1500);
+                $(".traveltour-top-bar").removeClass("hidden");
                 $('.header').removeClass('bg-overload');
             }else{
-                $(".traveltour-top-bar").addClass("hidden", 1500);
+                $(".traveltour-top-bar").addClass("hidden");
                 $('.header').addClass('bg-overload');
             }
 

@@ -94,7 +94,7 @@
 
 @media(max-width: 768px){
 	.destinations .item{
-		width: 50%;
+		/*width: 50%;*/
 	}
 }
 

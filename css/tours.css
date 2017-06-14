@@ -129,7 +129,7 @@
 }
 
 .other-destinations{
-
+    margin-right: -15px;
 }
 
 .other-destinations h3{
@@ -154,7 +154,21 @@
     color: #8c8c8c;
 }
 
+@media(min-width: 320px){
+    .other-destinations{
+        margin-left: -15px;
+    }
+}
+
+@media(min-width: 1024px){
+    
+    .other-destinations{
+        margin-left: 0px;
+    }
+}
+
 @media(min-width: 768px){
+
 	.tour-detail-center{
 		padding: 20px 35px;
 		max-height: 245px;

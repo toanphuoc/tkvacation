@@ -88,8 +88,6 @@
 
 .info-overview-content p{
 	margin-top: 0px;
-    margin-bottom: 20px;
-    /* color: #8c8c8c; */
     font-size: 15px;
 }
 
@@ -168,6 +166,12 @@
     margin-right: 15px;
     font-weight: 800;
     color: #fff;
+}
+
+@media(min-width: 320px){
+    .price p{
+        font-size: 25px;
+    }
 }
 
 @media(min-width: 768px){
