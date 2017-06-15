@@ -3,7 +3,6 @@
     background-position: center;
     background-size: cover;
     position: relative;
-    height: 75%;
     margin-top: -50px;
     max-height: 500px;
 }
@@ -37,10 +36,10 @@
 }
 
 .tour-name h3{
-	font-size: 29px;
+	font-size: 42px;
     font-weight: bold;
     margin-bottom: 0px;
-    color: #4179C1;
+    color: #fff;
 }
 
 .natigate-detail-info{
@@ -172,10 +171,17 @@
     .price p{
         font-size: 25px;
     }
+
+    .tour-img-wapper{
+        height: 60%;
+    }
 }
 
 @media(min-width: 768px){
 	
+    .tour-img-wapper{
+        height: 75%;
+    }
 }
 
 @media(max-width: 480px){

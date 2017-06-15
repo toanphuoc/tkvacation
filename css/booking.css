@@ -3,7 +3,6 @@
     background-position: center;
     background-size: cover;
     position: relative;
-    height: 75%;
     margin-top: -50px;
     max-height: 500px;
 }
@@ -81,6 +80,18 @@
     display: inline-block;
     color: #fff;
     border-radius: 0;
+}
+
+@media(min-width: 320px){
+    .booking-img-wapper{
+        height: 60%;
+    }
+}
+
+@media(min-width: 768px){
+    .booking-img-wapper{
+        height: 75%;
+    }
 }
 
 @media(max-width: 480px){

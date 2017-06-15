@@ -9,14 +9,14 @@ app.controller('DestinationController', function ($scope, $http) {
 
 	$scope.showAllTours = function($event){
  		var ele = $event.currentTarget;
- 		$(ele).find('.category-head-animate').removeClass('hidden', 2500);
- 		$(ele).find('.category-overlay').removeClass('hidden', 2500);
+ 		$(ele).find('.category-head-animate').removeClass('hidden');
+ 		$(ele).find('.category-overlay').removeClass('hidden');
  	}
 
  	$scope.hiddenAllTours = function($event){
  		var ele = $event.currentTarget;
- 		$(ele).find('.category-head-animate').addClass('hidden', 2500);
- 		$(ele).find('.category-overlay').addClass('hidden', 2500);
+ 		$(ele).find('.category-head-animate').addClass('hidden');
+ 		$(ele).find('.category-overlay').addClass('hidden');
  	}
 
 });
