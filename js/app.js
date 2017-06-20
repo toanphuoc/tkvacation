@@ -44,5 +44,12 @@ app.config(function($routeProvider) {
     otherwise({ redirectTo: '/' })
 });
 
-
+// app.directive('menu', function(){
+// 	 return function(scope, element, attrs) {
+// 	    var clickingCallback = function() {
+// 	      	$(element).addClass('active');
+// 	    };
+// 	    element.bind('click', clickingCallback);
+// 	}
+// })
 
