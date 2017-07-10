@@ -9,22 +9,19 @@ app.controller('TourController', function ($scope, $routeParams, $http, $locatio
 		$scope.itineraries = response.data.itinerary;
 	});
 
-	$scope.scrollToOverview = function($event){
-		$('.overview').addClass('active');
-		$('.itinerary').removeClass('active');
-        $('html, body').animate({
-            scrollTop: $(".info-overview").offset().top - 90
-        }, 500);
+	$scope.showItinerayTab = function(){
+		$('#itineray').tab('show');
 	}
-	
 
-	$scope.scrollToItinerary = function($event){
-		$('.itinerary').addClass('active');
-		$('.overview').removeClass('active');
-		$('html, body').animate({
-            scrollTop: $(".info-itenirary").offset().top - 90
-        }, 500);
+	$scope.showOverviewTab = function(){
+		$('#overview').tab('show');
 	}
+
+	$scope.showPriceTab = function(){
+		$('#prices').tab('show');
+	}
+
+
 
 	$('#datepicker').datepicker({
 		autoSize: true, 
