@@ -3,7 +3,6 @@
     background-position: center;
     background-size: cover;
     position: relative;
-    height: 70%;
     margin-top: -50px;
     max-height: 500px;
 }
@@ -19,10 +18,6 @@
     font-weight: bold;
     margin-bottom: 0px;
     color: #fff;
-}
-
-.customize_tour{
-	/*padding: 25px 30px;*/
 }
 
 .customize_tour .title{
@@ -73,17 +68,27 @@
     cursor: default;
 }
 
-@media(min-width: 768px){
-    .customize_tour label{
+@media(min-width: 320px){
+    .tour-img-wapper{
+        height: 60%;
+    }
 
+    .tour-name h3{
+        font-size: 30px;
+    }
+}
+
+@media(min-width: 768px){
+    .tour-img-wapper{
+        height: 70%;
+    }
+
+    .tour-name h3{
+        font-size: 42px;
     }
 }
 
 @media(max-width: 480px){
-
-    .tour-name h3{
-        font-size: 20px;
-    }
 
     .customize_tour .title{
         font-size: 15px;

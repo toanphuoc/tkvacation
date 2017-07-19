@@ -15,19 +15,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
     <!-- Custom CSS -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/modern-business.css?v=1.1" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body ng-app="vacation">
@@ -35,7 +26,7 @@
     <div id="header">
         <nav class="navbar navbar-inverse navbar-fixed-top header" role="navigation">
             <div class="container traveltour-top-bar">
-                <div class="row">
+                <div class="row header-desktop">
                     <div class="col-md-6 text-left">
                         <span class="fa fa-phone phone">
                             <a href="tel:84-938-144-236"><span>+84.938.144.236</span></a>
@@ -45,9 +36,12 @@
                             <a href="mailto:contact@tkvacation.com"><span>contact@tkvacation.com</span></a>
                         </span>
                     </div>
-                   <!--  <div class="col-md-6 text-right">
-                        <a href="">Customize a tour</a>
-                    </div> -->
+                </div>
+                <div class="row header-mobile">
+                    <a href="tel:84-938-144-236">
+                        <i class="fa fa-phone phone"></i>
+                    </a>
+                    <a href="mailto:contact@tkvacation.com" style="margin-left: 10px;"><i class="fa fa-envelope email"></i></a>
                 </div>
             </div>
             <div class="container">
@@ -65,22 +59,22 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right menu">
                         <li >
-                            <a class="active" href="#!/">HOME</a>
+                            <a class="active" href="#!/" menu>HOME</a>
                         </li>
                         <li>
-                            <a href="#!/destinations">DESTINATIONS</a>
+                            <a href="#!/destinations" menu>DESTINATIONS</a>
                         </li>
                         <li>
-                            <a href="#!/custumize_tour">CUSTOMIZE TOUR</a>
+                            <a href="#!/custumize_tour" menu>CUSTOMIZE TOUR</a>
                         </li>
                         <li>
-                            <a href="#!/search?page=1">FIND TOUR</a>
+                            <a href="#!/search?page=1" menu>FIND TOUR</a>
                         </li>
                         <li>
-                            <a href="#!/contact">CONTACT</a>
+                            <a href="#!/contact" menu>CONTACT</a>
                         </li>
                         <li>
-                            <a href="#!/about">ABOUT US</a>
+                            <a href="#!/about" menu>ABOUT US</a>
                         </li>
                     </ul>
                 </div>
@@ -121,7 +115,7 @@
                             <p><i class="fa fa-envelope"></i> <span> 02 Nguyen Huy Tu, Dakao Ward, District 1</span></p>
                             <p><i class="fa fa-phone"></i> <a href="tel:+84 938 144 236"> +84 938 144 236</a></p>
                             <p><i class="fa fa-envelope"></i><a href="mailto:contact@tkvacation.com"> contact@tkvacation.com</a></p>
-                            <p><i class="fa fa-skype"></i> <a href="skype:tuan.hm2501?chat"> AJ Tuan Hoang</a></p>
+                            <p><i class="fa fa-skype"></i> <a href="skype:tuan.hm2501?chat"> AJ Tuan Hoang</a>  &nbsp;  &nbsp;<i class="fa fa-skype"></i><a href="skype:terasa_le-nguyen?chat">Diem Le</a>   &nbsp;  &nbsp;<i class="fa fa-skype"></i><a href="skype:live:c0dc73b7109c97a5?chat">Dung Tran</a></p>
                         </div>
                     </div>
                     <div class="col-md-1 col-sm-1 col-xs-12">
@@ -155,24 +149,26 @@
     <script type="text/javascript" src="js/controller/tours_controller.js"></script>
     <script type="text/javascript" src="js/controller/tour_detail_controller.js"></script>
     <script type="text/javascript" src="js/controller/booking_controller.js"></script>
+    <script type="text/javascript" src="js/controller/booking_success_controller.js"></script>
     <script type="text/javascript" src="js/controller/search_controller.js"></script>
     <script type="text/javascript" src="js/controller/customize_controller.js"></script>
 
     <script>
 
-        $('.menu a').hover(function(){
+        $('.menu a').click(function(){
            var parent = $(this).parent().parent();
            var ele = $(parent).find('.active');
-           console.log($(ele).text());
            $(ele).removeClass('active');
+
+           $(this).addClass('active');
         });
 
         $(window).scroll(function () { 
             if ($(this).scrollTop() < 100) {
-                $(".traveltour-top-bar").removeClass("hidden", 1500);
+                $(".traveltour-top-bar").removeClass("hidden");
                 $('.header').removeClass('bg-overload');
             }else{
-                $(".traveltour-top-bar").addClass("hidden", 1500);
+                $(".traveltour-top-bar").addClass("hidden");
                 $('.header').addClass('bg-overload');
             }
 

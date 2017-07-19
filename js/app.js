@@ -25,7 +25,7 @@ app.config(function($routeProvider) {
 		templateUrl: 'views/tour.html',
 		controller: 'TourController'
 	}).
-	when('/booking/:tourId/:startDate/:dateOfNumber', {
+	when('/booking', {
 		templateUrl: 'views/booking.html',
 		controller: 'BookingController'
 	}).
@@ -37,8 +37,19 @@ app.config(function($routeProvider) {
 		templateUrl: 'views/customize_tour.html',
 		controller: 'CustumizeTourController'
 	}).
+	when('/booking_success',{
+		templateUrl: 'views/booking_success.html',
+		controller: 'BookingSuccessController'
+	}).
     otherwise({ redirectTo: '/' })
 });
 
-
+// app.directive('menu', function(){
+// 	 return function(scope, element, attrs) {
+// 	    var clickingCallback = function() {
+// 	      	$(element).addClass('active');
+// 	    };
+// 	    element.bind('click', clickingCallback);
+// 	}
+// })
 

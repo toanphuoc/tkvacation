@@ -1,4 +1,4 @@
-app.controller('TourController', function ($scope, $routeParams, $http) {
+app.controller('TourController', function ($scope, $routeParams, $http, $location) {
 	var id = $routeParams.tourId;
 
 	$http({
@@ -9,20 +9,34 @@ app.controller('TourController', function ($scope, $routeParams, $http) {
 		$scope.itineraries = response.data.itinerary;
 	});
 
-	$scope.scrollToOverview = function($event){
-		$('.overview').addClass('active');
-		$('.itinerary').removeClass('active');
-        $('html, body').animate({
-            scrollTop: $(".info-overview").offset().top - 90
-        }, 500);
+	$scope.showItinerayTab = function(){
+		$('#itineray').tab('show');
 	}
-	
 
-	$scope.scrollToItinerary = function($event){
-		$('.itinerary').addClass('active');
-		$('.overview').removeClass('active');
-		$('html, body').animate({
-            scrollTop: $(".info-itenirary").offset().top - 90
-        }, 500);
+	$scope.showOverviewTab = function(){
+		$('#overview').tab('show');
 	}
+
+	$scope.showPriceTab = function(){
+		$('#prices').tab('show');
+	}
+
+
+
+	$('#datepicker').datepicker({
+		autoSize: true, 
+		closeText: "Close", 
+		defaultDate: new Date(),
+		dateFormat: 'mm-dd-yy'
+	});
+
+	$scope.booking = {};
+ 	$scope.bookingTour = function(){
+ 		$scope.submitted = true;
+ 		if(!$scope.booking_form.$valid) {
+	       	return;
+	    }
+
+	    $location.path('/booking').search({tourId: id, start_date: $scope.booking.start_date, number_of_people: $scope.booking.number_of_people});
+ 	}
 });

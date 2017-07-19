@@ -2,7 +2,7 @@
 <div class="tour-img-wapper">
     <div class="container">
     	<div class="row padding_30">
-    		<div class="tour-name">
+    		<div class="tour-name text-center">
     			<h3>Search Tour</h3>
     		</div>
     	</div>
@@ -14,13 +14,13 @@
 		<div class="row margin_0">
 			<div class="col-md-3 col-sm-12 col-xs-12 search-banel">
 				<div class="form-group">
-			    	<label for="exampleInputEmail1">Keywords</label>
-			    	<input type="email" class="form-control" id="exampleInputEmail1">
+			    	<label for="">Keywords</label>
+			    	<input type="text" class="form-control" ng-model="searchObj.key">
 			  	</div>
 			  	<div class="form-group">
-			    	<label for="exampleInputEmail1">Destination</label>
+			    	<label for="">Destination</label>
 			    	<div style="position: relative; ">
-		                <select class="form-control">
+		                <select class="form-control" ng-model="searchObj.des">
 		                    <option value="">Any</option>
 		                    <option ng-repeat="item in destinations" value="{{item.des.id}}">{{item.des.title}}</option>
 		                    
@@ -28,28 +28,25 @@
 	                </div>
 			  	</div>
 			  	<div class="form-group">
-			    	<label for="exampleInputEmail1">Duration</label>
+			    	<label for="">Duration</label>
 			    	<div style="position: relative; ">
-		                <select class="form-control">
-		                   	<option value="">Any</option>
-		                   	<option value="1" min="1" max="1">1 Day Tour</option>
-		                   	<option value="2" min="2" max="4">2-4 Days Tour</option>
-		                   	<option value="5" min="5" max="7">5-7 Days Tour</option>
-		                   	<option value="7" max="7">7+ Days Tour</option>
+		                <select class="form-control" ng-model="searchObj.period">
+		                   	<option value="0">Any</option>
+		                   	<option ng-repeat="i in durations" value="{{i.id}}" ng-selected="i.id == searchObj.period" >{{i.text}}</option>
 		                </select>
 	                </div>
 			  	</div>
 			  	<div class="form-group">
-			    	<label for="exampleInputEmail1">Price</label>
+			    	<label for="">Price</label>
 			    	<div style="position: relative; ">
-		                <select class="form-control">
-		                   	<option value="">Any</option>
-		                   	<option value="1">$0 - $100</option>
-		                   	<option value="2">$100 - $200</option>
-		                   	<option value="5">$200 - $500</option>
-		                   	<option value="7">$500 +</option>
+		                <select class="form-control" ng-model="searchObj.price">
+		                   	<option value="0">Any</option>
+		                   	<option ng-repeat="p in prices" value="{{p.id}}">{{p.text}}</option>
 		                </select>
 	                </div>
+			  	</div>
+			  	<div class="form-group text-right">
+			  		<a href="#!/search?page=1">Clear search</a>
 			  	</div>
 			  	<div class="form-group">
 			  	 	<input class="form-control search-btn" type="button" value="SEARCH" name="" ng-click="search()">
@@ -57,7 +54,11 @@
 			  	</div>
 			</div>
 			<div class="col-md-9 col-sm-12 col-xs-12 tours-des">
-
+				<div class="row" ng-show="tours.length == 0">
+					<div class="alert alert-success text-center">
+					  	Data is not found.
+					</div>
+				</div>
 
 				<div class="row item" ng-repeat="item in tours" ng-show="tours.length > 0">
 					<div class="col-md-3 col-sm-3 col-xs-12 padding_0 item_img">
@@ -95,7 +96,7 @@
 				<div class="row text-right" ng-show="pagin.length > 1">
 					<ul class="pagination search_pagination">
 						<li ng-repeat="p in pagin track by $index" ng-class="$index + 1 == currentPage ? 'active' : ''">
-							<a href="#!/search?page={{$index+1}}">{{$index + 1}}</a>
+							<a href="javascript:void(0);" ng-click="navigate($index + 1);">{{$index + 1}}</a>
 						</li>
 					</ul>
 				</div>

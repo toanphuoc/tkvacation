@@ -1,3 +1,3 @@
-app.controller('AboutController', ['$scope', function ($scope) {
-	console.log('dsadasdas');
-}]);
+app.controller('AboutController', function ($scope) {
+
+});

@@ -16,5 +16,4 @@ app.controller('DestinationTourController', function ($scope, $routeParams, $htt
 	}).then(function successCallback(response){
 		$scope.otherDes = response.data;
 	});
- 	
 });
