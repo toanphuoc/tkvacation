@@ -39,6 +39,14 @@ body {
     border-color: transparent;
 }
 
+.logo-img-mobile{
+    display: none;
+}
+
+.logo-img-desktop{
+    display: block;
+}
+
 .bg-overload{
     background: rgba(0, 0, 0, 0.9) !important;
 }
@@ -647,6 +655,15 @@ footer {
 
 @media (min-width: 320px){
 
+    .logo-img-mobile{
+        display: block;
+        padding: 12px 15px;
+    }
+
+    .logo-img-desktop{
+        display: none;
+    }
+
     #myCarousel {
         margin-top: 70px;
     }
@@ -747,6 +764,14 @@ footer {
 
 @media (min-width: 768px){
 
+    .logo-img-mobile{
+        display: none;
+    }
+
+    .logo-img-desktop{
+        display: block;
+    }
+
     #myCarousel {
         margin-top: -50px;
     }   
@@ -764,7 +789,7 @@ footer {
     }
 
     .logo{
-        padding: 10px 15px 0 15px;
+        padding: 0px 0px 0 15px;
     }
 
     .header{
