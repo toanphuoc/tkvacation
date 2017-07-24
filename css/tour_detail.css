@@ -175,12 +175,20 @@
     .tour-img-wapper{
         height: 60%;
     }
+
+    .booking{
+        margin-top: 30px;
+    }
 }
 
 @media(min-width: 768px){
 	
     .tour-img-wapper{
         height: 75%;
+    }
+
+    .booking{
+        margin-top: 0px;
     }
 }
 

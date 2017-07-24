@@ -1,0 +1,44 @@
+.blog-img-wapper{
+    background-image: url("../imgs/page-title-background.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-top: -50px;
+    max-height: 500px;
+}
+
+.blog-img-wapper h1{
+    font-size: 54px;
+    letter-spacing: 2px;
+    color: #fff;
+    position: relative;
+    top: 60%;
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+#blog{
+    padding-top: 75px;
+    background: #F3F3F3;
+}
+
+.item{
+    border: 1px solid #e1e1e1;
+    margin: 0 0 20px;
+    /*margin-bottom: 20px;*/
+}
+
+.item_img{
+        overflow: hidden;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 0;
+}
+
+.img{
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 300px;
+    max-height: 300px;
+}

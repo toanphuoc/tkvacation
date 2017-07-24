@@ -41,6 +41,10 @@ app.config(function($routeProvider) {
 		templateUrl: 'views/booking_success.html',
 		controller: 'BookingSuccessController'
 	}).
+	when('/blog', {
+		templateUrl: 'views/blog.html',
+		controller: 'BlogController'
+	}).
     otherwise({ redirectTo: '/' })
 });
 
