@@ -22,7 +22,7 @@
 
 .tours{
 	background: #F3F3F3;
-    padding: 35px 0;
+    padding: 50px 0;
 }
 
 .tours .tours-des .item{
@@ -183,6 +183,10 @@
 
 .search_pagination{
     margin-top: 0px;
+}
+
+.search_pagination a{
+    padding: 10px 15px !important;
 }
 
 @media(min-width: 768px){
