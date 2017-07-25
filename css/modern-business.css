@@ -105,7 +105,7 @@ body {
 }
 
 .menu li{
-        margin-left: 30px;
+        margin-left: 25px;
 }
 
 .img-portfolio {
@@ -763,6 +763,10 @@ footer {
 
 
 @media (min-width: 768px){
+
+    .menu li:first-child{
+        margin-left: 0px;
+    }
 
     .logo-img-mobile{
         display: none;

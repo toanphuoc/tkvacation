@@ -53,10 +53,14 @@
 }
 
 .item_detail_text{
-    margin-top: 15px;
-     overflow: hidden;
+    margin-top: 5px;
+    overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: break-word;
+}
+
+.item_header{
+    margin-bottom: 0px;
 }
 
 .item_bottom{
@@ -107,7 +111,7 @@
 
 @media(min-width: 768px){
     .blog_name{
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .item_detail{

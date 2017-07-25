@@ -1,19 +1,19 @@
-app.controller('BlogController', function ($scope) {
-	$('#blog').find('img').each(function(index, el) {
+app.controller('BlogController', function ($scope, $http, $routeParams, $filter) {
 
-		var img = $(el);
-		
-		// console.log(img.naturalHeight,    img.naturalWidth);
-		// console.log($("#img1").height(),  $("#img1").width());
+	var page = $routeParams.page;
+	if (page == undefined) page = 1;
 
-		var theImage = new Image();
-		theImage.src = $(el).attr("src");
-		console.log(theImage.height);
-		console.log(theImage.width);
-		// console.log(theImage.naturalHeight);
-		// console.log(theImage.naturalWidth);
-		// if(theImage.height > theImage.width){
-		// 	$(el).addClass('rotate');
-		// }
+	$scope.currentPage = page;
+	
+	$http({
+		method: 'GET',
+		url: BASE_URL + 'blog/list?page=' + page
+	}).then(function successCallback(response){
+		$scope.blogs = response.data.blogs;
+		angular.forEach($scope.blogs, function(value, key){
+			value.date_created = $filter('date')(new Date(value.date_created),'MMMM dd, yyyy');
+		});
+
+		$scope.pages = response.data.page;
 	});
 });

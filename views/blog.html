@@ -7,136 +7,50 @@
 	<div class="container padding_30">
 		<div class="row maring_0">
 			<div class="col-md-12">
-				<div class="row item">
+
+				<div class="row item" ng-repeat="blog in blogs">
 					<div class="col-md-5 col-sm-4 col-xs-12 item_img">
-						<a href="#!/blog/1">
-							<div class="img" style="background-image: url('blog_imgs/IMG_2941.JPG');"></div>
+						<a href="#!/blog/{{blog.id}}">
+							<div class="img" ng-style="{'background-image': 'url(' + blog.blog_img + ')'}"></div>
 						</a>
 					</div>
-					<div class="col-md-7 col-sm-4 col-xs-12 item_detail">
-						<div class="item_header">
-							<i class="fa fa-clock-o"></i><label>JUNE 6, 2016</label>
+					<div class="col-md-7 col-sm-8 col-xs-12 item_detail">
+						<div>
+							<p class="item_header">
+							<i class="fa fa-clock-o"></i>
+
+							<label>{{blog.date_created}}</label></p>
 						</div>
-						<a class="blog_name" href="">Pack wisely before traveling</a>
-						<div class="item_detail_text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be. entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm ....</div>
+						<a class="blog_name" href="#!/blog/{{blog.id}}">{{blog.blog_name}}</a>
+						<div class="item_detail_text" ng-bind-html="blog.overview | limitTo: 550">
+							<span ng-if="blog.overview.length > 500">...</span>
+						</div>
 
 						<div class="item_bottom">
-							<a href="">READ MORE...</a>
+							<a href="#!/blog/{{blog.id}}">READ MORE...</a>
 						</div>
 						
 					</div>
 				</div>
-				<div class="row item">
-					<div class="col-md-5 col-sm-4 col-xs-12 item_img">
-						<a href="">
-						<div class="img" style="background-image: url('blog_imgs/cho_ben_thanh.JPG');"></div>
-						</a>
-					</div>
-					<div class="col-md-7 col-sm-4 col-xs-12 item_detail">
-						<div class="item_header">
-							<i class="fa fa-clock-o"></i><label>JUNE 6, 2016</label>
-						</div>
-						<a class="blog_name" href="">Pack wisely before traveling</a>
-						<div class="item_detail_text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be. entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm ....</div>
-
-						<div class="item_bottom">
-							<a href="">READ MORE...</a>
-						</div>
-					</div>
-				</div>
-				<div class="row item">
-					<div class="col-md-5 col-sm-4 col-xs-12 item_img">
-						<a href="">
-							<div class="img" style="background-image: url('blog_imgs/IMG_2941.JPG');"></div>
-						</a>
-					</div>
-					<div class="col-md-7 col-sm-4 col-xs-12 item_detail">
-						<div class="item_header">
-							<i class="fa fa-clock-o"></i><label>JUNE 6, 2016</label>
-						</div>
-						<a class="blog_name" href="">Pack wisely before traveling</a>
-						<div class="item_detail_text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be. entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm ....</div>
-
-						<div class="item_bottom">
-							<a href="">READ MORE...</a>
-						</div>
-					</div>
-				</div>
-				<div class="row item">
-					<div class="col-md-5 col-sm-4 col-xs-12 item_img">
-						<a href="">
-						<div class="img" style="background-image: url('blog_imgs/cho_ben_thanh.JPG');"></div>
-						</a>
-					</div>
-					<div class="col-md-7 col-sm-4 col-xs-12 item_detail">
-						<div class="item_header">
-							<i class="fa fa-clock-o"></i><label>JUNE 6, 2016</label>
-						</div>
-						<a class="blog_name" href="">Pack wisely before traveling</a>
-						<div class="item_detail_text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be. entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm ....</div>
-
-						<div class="item_bottom">
-							<a href="">READ MORE...</a>
-						</div>
-					</div>
-				</div>
-				<div class="row item">
-					<div class="col-md-5 col-sm-4 col-xs-12 item_img">
-						<a href="">
-							<div class="img" style="background-image: url('blog_imgs/IMG_2941.JPG');"></div>
-						</a>
-					</div>
-					<div class="col-md-7 col-sm-4 col-xs-12 item_detail">
-						<div class="item_header">
-							<i class="fa fa-clock-o"></i><label>JUNE 6, 2016</label>
-						</div>
-						<a class="blog_name" href="">Pack wisely before traveling</a>
-						<div class="item_detail_text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be. entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm ....</div>
-
-						<div class="item_bottom">
-							<a href="">READ MORE...</a>
-						</div>
-					</div>
-				</div>
-				<div class="row item">
-					<div class="col-md-5 col-sm-4 col-xs-12 item_img">
-						<a href="">
-						<div class="img" style="background-image: url('blog_imgs/cho_ben_thanh.JPG');"></div>
-						</a>
-					</div>
-					<div class="col-md-7 col-sm-4 col-xs-12 item_detail">
-						<div class="item_header">
-							<i class="fa fa-clock-o"></i><label>JUNE 6, 2016</label>
-						</div>
-						<a class="blog_name" href="">Pack wisely before traveling</a>
-						<div class="item_detail_text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be. entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm ....</div>
-
-						<div class="item_bottom">
-							<a href="">READ MORE...</a>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
-		<div class="row maring_0 text-right">
+		<div class="row maring_0 text-right" ng-if="pages.totalPage > 1">
 			<div class="col-md-12">
 			<nav aria-label="Page navigation">
 			  	<ul class="pagination blog_pagination">
-				    <li>
+				<!--     <li>
 				      	<a href="#" aria-label="Previous">
 				        	<span aria-hidden="true">&laquo;</span>
 				      	</a>
+				    </li> -->
+				    <li ng-repeat="p in pages track by $index" ng-class="$index + 1 == currentPage ? 'active' : ''">
+				    	<a href="#!/blogs?page={{$index + 1}}">{{$index+1}}</a>
 				    </li>
-				    <li class="active"><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
-				    <li><a href="#">3</a></li>
-				    <li><a href="#">4</a></li>
-				    <li><a href="#">5</a></li>
-				    <li>
+				    <!-- <li>
 				      	<a href="#" aria-label="Next">
 				        	<span aria-hidden="true">&raquo;</span>
 				      	</a>
-				    </li>
+				    </li> -->
 			  	</ul>
 			</nav>
 			</div>
