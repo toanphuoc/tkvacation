@@ -23,6 +23,10 @@
     height: 100%;
 }
 
+#carousel-blog-imgs{
+	margin-bottom: 20px;
+}
+
 #carousel-blog-imgs img{
 	margin-left: auto;
     margin-right: auto;
@@ -31,7 +35,7 @@
 
 .blog_content{
 	/*color: #e1e1e1;*/
-	padding: 20px 0;
+	/*padding: 20px 0;*/
 }
 
 .blog_content img{
@@ -49,5 +53,9 @@
     #carousel-blog-imgs img{
 		max-height: 500px;
 		min-height: 500px
+	}
+
+	.blog_left{
+		padding-right: 0px;
 	}
 }
