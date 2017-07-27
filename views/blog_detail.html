@@ -14,12 +14,9 @@
 	<div class="container padding_30">
 		<div class="row ">
 			<div class="col-md-8 col-sm-12 col-xs-12 margin_0 blog_left">
-				<div id="carousel-blog-imgs" class="carousel slide" data-ride="carousel">
+				<div id="carousel-blog-imgs" class="carousel slide" data-ride="carousel" ng-show="imgs.length > 0">
 				  <!-- Indicators -->
 				  	<ol class="carousel-indicators">
-					    <!-- <li data-target="#carousel-blog-imgs" data-slide-to="0" class="active"></li>
-					    <li data-target="#carousel-blog-imgs" data-slide-to="1"></li>
-					    <li data-target="#carousel-blog-imgs" data-slide-to="2"></li> -->
 					    <li data-target="#carousel-blog-imgs" data-slide-to="$index+1" ng-repeat="item in imgs" ng-class="$first ? 'active': ''"></li>
 				  	</ol>
 
@@ -48,7 +45,12 @@
 					
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-12 col-xs-12 margin_0 blog_right">Comment</div>
+			<div class="col-md-4 col-sm-12 col-xs-12 margin_0 blog_right">
+				<div style="background-color: #e3e3e3; padding: 0 5px;">
+					<div class="fb-comments" data-href="http://www.tkvacation.com/#!/blog/{{id}}" data-width="100%" data-numposts="5"></div>	
+				</div>
+				
+			</div>
 		</div>
 	</div>
 </div>

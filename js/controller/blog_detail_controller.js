@@ -12,11 +12,11 @@ app.controller('BlogDetailController', function ($scope, $http, $routeParams, $f
 		$('.carousel').carousel('next');
 	}
 
-	var id = $routeParams.blog_id;
+	$scope.id = $routeParams.blog_id;
 
 	$http({
 		method: 'GET',
-		url: BASE_URL + 'blog/getBlog/' + id
+		url: BASE_URL + 'blog/getBlog/' + $scope.id
 	}).then(function successCallback(response){
 		$scope.blog = response.data.blog;
 		$scope.imgs = response.data.imgs;
