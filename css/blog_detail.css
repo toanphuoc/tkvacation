@@ -46,6 +46,37 @@
 	padding: 0 15px;
 }
 
+.blog_right .title{
+	margin-top: 0;
+	color: #337ab7;
+	font-size: 25px;
+}
+
+.other-blogs{
+	list-style-type: none;
+    padding-left: 0px;
+}
+
+.other-blogs li{
+	font-size: 15px;
+    font-weight: 500;
+    border-top: 1px solid #e3e3e3;
+    padding: 10px 0px 0px 15px;
+}
+
+.other-blogs a{
+	margin-left: 5px;
+}
+
+.other-blogs a:hover{
+	text-decoration: none;
+}
+
+.other-blogs span{
+	font-weight: 500;
+    color: rgba(0, 0, 0, 0.44);
+}
+
 @media(min-width: 320px){
     #carousel-blog-imgs img{
 		min-height: 300px;

@@ -70,7 +70,6 @@
     letter-spacing: 0px;
     text-transform: none;   
     color: #383838;
-    padding-bottom: 25px;
 }
 
 .info-overview h6 i, .info-itenirary h6 i, .info-price h6 i{
@@ -79,7 +78,7 @@
 }
 
 .info-overview-content{
-	/*padding: 0 10px;*/
+
 }
 
 .info-overview-content p{
@@ -152,7 +151,7 @@
 }
 
 .price{
-    margin-bottom: 30px;
+    margin: 30px 0px;
 }
 
 .price table td{

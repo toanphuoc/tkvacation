@@ -9,7 +9,29 @@
     	</div>
     </div>
 </div>
+<div id="fb-root"></div>
 
+<script type="text/javascript">
+
+	 window.fbAsyncInit = function() {
+            FB.init({
+              appId            : '1365901416838828',
+              autoLogAppEvents : true,
+              xfbml            : true,
+              status           : true,
+              version          : 'v2.4'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>  
 <div id="blog_detail">
 	<div class="container padding_30">
 		<div class="row ">
@@ -46,10 +68,18 @@
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-12 col-xs-12 margin_0 blog_right">
-				<div style="background-color: #e3e3e3; padding: 0 5px;">
-					<div class="fb-comments" data-href="http://www.tkvacation.com/#!/blog/{{id}}" data-width="100%" data-numposts="5"></div>	
-				</div>
-				
+				<!-- <div style="background-color: #e3e3e3; padding: 0 5px;">
+					<div class="fb-comments" fb-comment-box data-href="{{fbcomments}}" data-width="100%" data-numposts="5"></div>	
+				</div> -->
+
+				<h2 class="title">Other blogs</h2>
+				<p ng-show="otherBlogs.length == 0">Don't have any blogs.</p>	
+				<ul class="other-blogs">
+					<li ng-repeat="item  in otherBlogs">
+						<p><span>{{item.date_created}}</span><a href="#!/blog/{{item.id}}">{{item.blog_name}}</a></p>
+					</li>
+					
+				</ul>
 			</div>
 		</div>
 	</div>
