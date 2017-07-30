@@ -1,0 +1,23 @@
+<table class="table-bordered" style="width: 60%;">
+	<thead class="text-center">
+		<td width="10%"><strong>#</strong></td>
+		<td width="40%"><strong>Image</strong></td>
+		<td width="30%"><strong>Name</strong></td>
+		<td width="10%"></td>
+		<td width="10%"></td>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in des">
+			<td class="text-center">{{$index + 1}}</td>
+			<td>
+				<div>
+				<!-- <img ng-src="../{{item.des.img}}"> -->
+				<img style="width: 100%;" ng-src="../{{item.des.img}}">
+				</div>
+			</td>
+			<td>{{item.des.title}}</td>
+			<td class="text-center"><a href="#!/destination/{{item.des.id}}" class="action">Edit</a></td>
+			<td class="text-center">Delete</td>
+		</tr>
+	</tbody>
+</table>
