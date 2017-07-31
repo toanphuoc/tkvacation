@@ -1,1 +1,22 @@
-Contact message
+<table class="table-bordered" style="width: 100%;">
+	<thead class="text-center">
+		<td width="12%"><strong>Date</strong></td>
+		<td width="10%"><strong>Name</strong></td>
+		<td width="10%"><strong>Email</strong></td>
+		<td width="10%"><strong>Phone</strong></td>
+		<td width="50%"><strong>Message</strong></td>
+		<td width="8%"><strong>Delete</strong></td>
+	</thead>
+	<tbody>
+		<tr ng-repeat="m in messages">
+			<td>{{m.date_created}}</td>
+			<td>{{m.name}}</td>
+			<td>{{m.email}}</td>
+			<td class="text-center">{{m.number}}</td>
+			<td>
+				<p style="">{{m.message}}</p>
+			</td>
+			<td class="text-center"><button class="btn"><i class="glyphicon glyphicon-trash"></i></button></td>
+		</tr>
+	</tbody>
+</table>

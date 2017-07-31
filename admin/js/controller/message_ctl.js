@@ -1,4 +1,4 @@
-app.controller('MessageController', function($scope, $rootScope){
+app.controller('MessageController', function($scope, $rootScope, $http){
 
 	$rootScope.menu = {
 		'destination' : false,
@@ -8,4 +8,13 @@ app.controller('MessageController', function($scope, $rootScope){
 		'customize' : false,
 		'blog': false
 	};
+
+	$http({
+		method: 'GET',
+		url : BASE_URL + 'contact/list?token=' + $rootScope.token
+	}).then(function success(response){
+		$scope.messages = response.data.contact;
+		$scope.pages = response.data.page;
+	});
+
 });

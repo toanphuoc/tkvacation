@@ -30,6 +30,10 @@ app.config(function($routeProvider) {
 		templateUrl: 'view/blog.html',
 		controller: 'BlogController'
 	}).
+	when('/create_destination', {
+		templateUrl: 'view/destination_create.html',
+		controller: 'DestinationCreateController'
+	}).
 	otherwise({ redirectTo: '/' })
 });
 

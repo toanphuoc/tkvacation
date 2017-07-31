@@ -14,6 +14,9 @@ app.controller('DestinationDetailController', function($scope, $rootScope, $http
 		url: BASE_URL + 'destination/getDestinationById/' + $routeParams.id
 	}).then(function success(response){
 		$scope.des = response.data;
+		if(response.data.status == '1')
+			$scope.checked = true;
+		else $scope.checked = false;
 	});
 
 	$scope.update = function(){
@@ -22,10 +25,16 @@ app.controller('DestinationDetailController', function($scope, $rootScope, $http
 
 		var title = $scope.des.title;
 		var file = $scope.myFile;
+		var status = $scope.checked;
+
+		if(status === true)
+			status = 1;
+		else if(status == false) status = 0;
 
         var fd = new FormData();
         fd.append('file', file);
     	fd.append('title', title);
+    	fd.append('status', status);
 
     	$http({
     		method: 'POST',
