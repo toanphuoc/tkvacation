@@ -108,7 +108,7 @@ app.controller('SearchController', function ($scope, $location, $routeParams, $h
 	*/
 	$http({
 		method: 'GET',
-		url: BASE_URL + 'destination/list'
+		url: BASE_URL + 'destination/listAvailable'
 	}).then(function success(response){
 		$scope.destinations = response.data;
 	});

@@ -36,7 +36,7 @@ app.controller('HomeController', function ($scope, $location, $http) {
 	*/
 	$http({
 		method: 'GET',
-		url: BASE_URL + 'destination/list'
+		url: BASE_URL + 'destination/listAvailable'
 	}).then(function success(response){
 		$scope.destinations = response.data;
 	});

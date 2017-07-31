@@ -2,7 +2,7 @@ app.controller('DestinationController', function ($scope, $http) {
 
  	$http({
 		method: 'GET',
-		url: BASE_URL + 'destination/list'
+		url: BASE_URL + 'destination/listAvailable'
 	}).then(function successCallback(response){
 		$scope.des = response.data;
 	});
