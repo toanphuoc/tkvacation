@@ -1,4 +1,14 @@
-app.controller('DestinationController', function ($scope, $http) {
+app.controller('DestinationController', function ($scope, $http, $rootScope) {
+
+	$rootScope.menu = {
+		'home': false,
+		'destination': true,
+		'customize' : false,
+		'find_tour': false,
+		'blog' : false,
+		'contact' : false,
+		'about' : false
+	}
 
  	$http({
 		method: 'GET',

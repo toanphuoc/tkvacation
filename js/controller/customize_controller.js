@@ -1,4 +1,15 @@
-app.controller('CustumizeTourController', function ($scope, $http) {
+app.controller('CustumizeTourController', function ($scope, $http, $rootScope) {
+
+	$rootScope.menu = {
+		'home': false,
+		'destination': false,
+		'customize' : true,
+		'find_tour': false,
+		'blog' : false,
+		'contact' : false,
+		'about' : false
+	}
+
 	$('#datepicker').datepicker({
 		autoSize: true, 
 		closeText: "Close", 

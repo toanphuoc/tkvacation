@@ -248,3 +248,7 @@ table .action{
     text-decoration: none;
     font-size: 15px;
 }
+
+.unread{
+    font-weight: 600;
+}

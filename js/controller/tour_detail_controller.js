@@ -1,4 +1,15 @@
-app.controller('TourController', function ($scope, $routeParams, $http, $location) {
+app.controller('TourController', function ($scope, $routeParams, $http, $location, $rootScope) {
+
+	$rootScope.menu = {
+		'home': false,
+		'destination': false,
+		'customize' : true,
+		'find_tour': false,
+		'blog' : false,
+		'contact' : false,
+		'about' : false
+	}
+
 	var id = $routeParams.tourId;
 
 	$http({

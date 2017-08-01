@@ -1,4 +1,14 @@
-app.controller('BlogDetailController', function ($scope, $http, $routeParams, $filter, $window, $route) {
+app.controller('BlogDetailController', function ($scope, $http, $routeParams, $filter, $window, $route, $rootScope) {
+
+	$rootScope.menu = {
+		'home': false,
+		'destination': false,
+		'customize' : false,
+		'find_tour': false,
+		'blog' : true,
+		'contact' : false,
+		'about' : false
+	}
 
 	$('.carousel').carousel({
 	    interval: 5000 //changes the speed

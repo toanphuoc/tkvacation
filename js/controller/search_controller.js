@@ -1,4 +1,14 @@
-app.controller('SearchController', function ($scope, $location, $routeParams, $http) {
+app.controller('SearchController', function ($scope, $location, $routeParams, $http, $rootScope) {
+
+	$rootScope.menu = {
+		'home': false,
+		'destination': false,
+		'customize' : false,
+		'find_tour': true,
+		'blog' : false,
+		'contact' : false,
+		'about' : false
+	}
 
 	$scope.durations = [
 		{

@@ -1,4 +1,14 @@
-app.controller('BlogController', function ($scope, $http, $routeParams, $filter) {
+app.controller('BlogController', function ($scope, $http, $routeParams, $filter, $rootScope) {
+
+	$rootScope.menu = {
+		'home': false,
+		'destination': false,
+		'customize' : false,
+		'find_tour': false,
+		'blog' : true,
+		'contact' : false,
+		'about' : false
+	}
 
 	var page = $routeParams.page;
 	if (page == undefined) page = 1;

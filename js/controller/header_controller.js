@@ -1,5 +1,4 @@
-app.controller('AboutController', function ($scope, $rootScope) {
-
+app.controller('HeaderController', function($rootScope){
 	$rootScope.menu = {
 		'home': false,
 		'destination': false,
@@ -7,6 +6,6 @@ app.controller('AboutController', function ($scope, $rootScope) {
 		'find_tour': false,
 		'blog' : false,
 		'contact' : false,
-		'about' : true
+		'about' : false
 	}
 });

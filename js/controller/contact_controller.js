@@ -1,4 +1,14 @@
-app.controller('ContactController', function ($scope, $http) {
+app.controller('ContactController', function ($scope, $http, $rootScope) {
+
+	$rootScope.menu = {
+		'home': false,
+		'destination': false,
+		'customize' : false,
+		'find_tour': false,
+		'blog' : false,
+		'contact' : true,
+		'about' : false
+	}
 
 	$scope.contact = {};
  	$scope.sendContact = function(){

@@ -1,4 +1,4 @@
-app.controller('MessageController', function($scope, $rootScope, $http){
+app.controller('MessageController', function($scope, $rootScope, $http, $filter, $routeParams){
 
 	$rootScope.menu = {
 		'destination' : false,
@@ -9,12 +9,58 @@ app.controller('MessageController', function($scope, $rootScope, $http){
 		'blog': false
 	};
 
-	$http({
-		method: 'GET',
-		url : BASE_URL + 'contact/list?token=' + $rootScope.token
-	}).then(function success(response){
-		$scope.messages = response.data.contact;
-		$scope.pages = response.data.page;
-	});
+	var page = $routeParams.page;
+	if (page == undefined) page = 1;
+
+	$scope.currentPage = page;
+
+	function loadData(){
+		$http({
+			method: 'GET',
+			url : BASE_URL + 'contact/list?token=' + $rootScope.token + '&page=' + page
+		}).then(function success(response){
+			$scope.messages = response.data.contact;
+			angular.forEach($scope.messages, function(value, key){
+				value.date_created = $filter('date')(new Date(value.date_created),'MMM dd, yyyy');
+			});
+
+			$scope.pages = response.data.page;
+		});
+	}
+
+	loadData();
+
+	$scope.getNumber = function(num) {
+	    return new Array(num);   
+	}
+
+	$scope.delete = function(id){
+		var anwser = confirm('Do you want delete this message?');
+		if(anwser){
+			$http({
+				method: 'PUT',
+				url : BASE_URL + 'contact/delete?token=' + $rootScope.token + '&id=' + id
+			}).then(function success(response){
+				if(response.data.status){
+					loadData();
+				}
+			});
+		}
+	}
+
+	$scope.changeStatus = function(id, status){
+		if(status == 1){
+			return;
+		}
+
+		$http({
+			method: 'PUT',
+			url : BASE_URL + 'contact/updateIsRead?token=' + $rootScope.token + '&id=' + id
+		}).then(function success(response){
+			if(response.data.status){
+				loadData();
+			}
+		});
+	}
 
 });

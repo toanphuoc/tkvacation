@@ -1,4 +1,15 @@
-app.controller('HomeController', function ($scope, $location, $http) {
+app.controller('HomeController', function ($scope, $location, $http, $rootScope) {
+
+	$rootScope.menu = {
+		'home': true,
+		'destination': false,
+		'customize' : false,
+		'find_tour': false,
+		'blog' : false,
+		'contact' : false,
+		'about' : false
+	}
+
 	$('.carousel').carousel({
 	    interval: 5000 //changes the speed
 	});
