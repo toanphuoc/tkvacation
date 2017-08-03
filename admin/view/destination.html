@@ -23,8 +23,8 @@
 			<td>
 				<span class="label" ng-class="item.status == '1' ? 'label-success' : 'label-default'">{{item.status == '1' ? 'Active' : 'Deactive'}}</span>
 			</td>
-			<td class="text-center"><a href="#!/destination/{{item.id}}" class="btn btn-primary">Edit</a></td>
-			<td class="text-center"><input type="button" class="btn btn-primary" name="" value="Change Status" ng-click="changeStatus(item.id, item.status);"></td>
+			<td class="text-center"><a href="#!/destination/{{item.id}}" class="btn btn-default">Edit</a></td>
+			<td class="text-center"><input type="button" class="btn btn-default" name="" value="Change Status" ng-click="changeStatus(item.id, item.status);"></td>
 		</tr>
 	</tbody>
 </table>

@@ -1,74 +1,74 @@
-<table class="table-bordered" style="width: 100%;">
-	<thead class="text-center">
-		<td width="5%"><strong>#</strong></td>
-		<td width="25%"><strong>Name</strong></td>
-		<td width="15%"><strong>Period (days)</strong></td>
-		<td width="10%"><strong>Availability</strong></td>
-		<td width="20%"><strong>Price (USD/VND)</strong></td>
-		<td width="15%"><strong>Date Created</strong></td>
-		<td width="5%"></td>
-		<td width="5%"></td>
-	</thead>
-	<tbody>
-		<tr>
-			<td class="text-center">1</td>
-			<td>
-				Vung Tau
-			</td>
-			<td class="text-center">2</td>
-			<td class="text-center">20 July</td>
-			<td class="text-center">$ 150 / VND 2.000.000</td>
-			<td class="text-center">20, July, 2017</td>
-			<td class="text-center">Detail</td>
-			<td class="text-center">Delete</td>
-		</tr>
-		<tr>
-			<td class="text-center">1</td>
-			<td>
-				Vung Tau
-			</td>
-			<td class="text-center">2</td>
-			<td class="text-center">20 July</td>
-			<td class="text-center">$ 150 / VND 2.000.000</td>
-			<td class="text-center">20, July, 2017</td>
-			<td class="text-center">Detail</td>
-			<td class="text-center">Delete</td>
-		</tr>
-		<tr>
-			<td class="text-center">1</td>
-			<td>
-				Vung Tau
-			</td>
-			<td class="text-center">2</td>
-			<td class="text-center">20 July</td>
-			<td class="text-center">$ 150 / VND 2.000.000</td>
-			<td class="text-center">20, July, 2017</td>
-			<td class="text-center">Detail</td>
-			<td class="text-center">Delete</td>
-		</tr>
-		<tr>
-			<td class="text-center">1</td>
-			<td>
-				Vung Tau
-			</td>
-			<td class="text-center">2</td>
-			<td class="text-center">20 July</td>
-			<td class="text-center">$ 150 / VND 2.000.000</td>
-			<td class="text-center">20, July, 2017</td>
-			<td class="text-center">Detail</td>
-			<td class="text-center">Delete</td>
-		</tr>
-		<tr>
-			<td class="text-center">1</td>
-			<td>
-				Vung Tau
-			</td>
-			<td class="text-center">2</td>
-			<td class="text-center">20 July</td>
-			<td class="text-center">$ 150 / VND 2.000.000</td>
-			<td class="text-center">20, July, 2017</td>
-			<td class="text-center">Detail</td>
-			<td class="text-center">Delete</td>
-		</tr>
-	</tbody>
-</table>
+<div id="tour">
+		<div class="row">
+			<div class="col-md-4 des">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-3 control-label text-left">View by: </label>
+						<div class="col-sm-8">
+						<select class="form-control" id="des">
+							<option value="0">----- All Destination -----</option>
+							<option ng-repeat="d in des" value="{{d.des.id}}">{{d.des.title}}</option>
+						</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 text-right">
+				<a href="" class="btn btn-primary">Create New</a>
+			</div>
+		</div>
+	<table class="table-bordered" style="width: 100%;">
+		<thead class="text-center">
+			<td width="5%"><strong>#</strong></td>
+			<td width="20%"><strong>Name</strong></td>
+			<td width="5%"><strong>Period (days)</strong></td>
+			<td width="10%"><strong>Availability</strong></td>
+			<td width="25%"><strong>Price (USD/VND)</strong></td>
+			<td width="10%"><strong>Date Created</strong></td>
+			<td width="5%"><strong>Booking</strong></td>
+			<td width="5%"><strong>Status</strong></td>
+			<td width="5%"><strong>Itinerary</strong></td>
+			<td width="5%"></td>
+			<td width="5%"></td>
+		</thead>
+		<tbody>
+			<tr ng-repeat="tour in tours">
+				<td class="text-center">{{$index+1}}</td>
+				<td>
+					{{tour.name}}
+				</td>
+				<td class="text-center">{{tour.period}}</td>
+				<td class="text-center">{{tour.availability}}</td>
+				<td class="text-center">$ {{tour.price}} / VND {{tour.price_vnd|number:0}}</td>
+				<td class="text-center">{{tour.date_created}}</td>
+				<td class="text-center">{{tour.booking}}</td>
+				<td class="text-center">
+					<span class="label" ng-class="tour.status == '1' ? 'label-success' : 'label-default'">{{tour.status == '1' ? 'Active' : 'Deactive'}}</span>
+				</td>
+				<td class="text-center"><a href="" class="btn btn-default">Itinerary</a></td>
+				<td class="text-center"><a href="" class="btn btn-default">Detail</a></td>
+				
+				<td class="text-center">Delete</td>
+			</tr>
+		</tbody>
+	</table>
+	<div ng-if="pages.totalPage > 1" class="text-right">
+		<nav aria-label="Page navigation">
+		  	<ul class="pagination">
+			<!--     <li>
+			      	<a href="#" aria-label="Previous">
+			        	<span aria-hidden="true">&laquo;</span>
+			      	</a>
+			    </li> -->
+			    <li ng-repeat="p in getNumber(pages.totalPage) track by $index" ng-class="$index + 1 == currentPage ? 'active' : ''">
+			    	<a href="#!/tour?page={{$index + 1}}">{{$index+1}}</a>
+			    </li>
+			    <!-- <li>
+			      	<a href="#" aria-label="Next">
+			        	<span aria-hidden="true">&raquo;</span>
+			      	</a>
+			    </li> -->
+		  	</ul>
+		</nav>
+	</div>
+</div>

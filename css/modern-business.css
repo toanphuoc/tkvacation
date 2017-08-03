@@ -738,9 +738,11 @@ footer {
     }
 
     .caption-text p{
-        font-size: 40px;
+        font-size: 25px;
         font-weight: 600;
         line-height: 20px;
+        font-style: italic;
+        color: #e81d1a;
     }
 
     .caption-text h1{
@@ -750,10 +752,10 @@ footer {
     }
 
     .caption-text a{
-        font-size: 13px;
+        font-size: 11px;
         font-weight: 900;
-        line-height: 12px;
-       
+        line-height: 10px;
+        padding: 10px 15px;  
     }
 
     .lst-popular-item .popular-tour-item{
@@ -870,9 +872,13 @@ footer {
     }
 
     .caption-text p{
-        font-size: 90px;
+        font-size: 50px;
         font-weight: 600;
         line-height: 50px;
+        font-style: italic;
+        color: #e81d1a;
+        background: rgba(0, 0, 0, 0.25);
+        padding-left: 10px;
     }
 
     .caption-text h1{
@@ -882,9 +888,9 @@ footer {
     }
 
     .caption-text a{
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 900;
-        
+        padding: 15px 18px;
     }
 
     .popular-tour .gdlr-core-title-item-link{

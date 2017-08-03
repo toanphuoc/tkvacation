@@ -2,8 +2,8 @@ app.controller('TourController', function ($scope, $routeParams, $http, $locatio
 
 	$rootScope.menu = {
 		'home': false,
-		'destination': false,
-		'customize' : true,
+		'destination': true,
+		'customize' : false,
 		'find_tour': false,
 		'blog' : false,
 		'contact' : false,

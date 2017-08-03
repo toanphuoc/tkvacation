@@ -1,4 +1,15 @@
-app.controller('BookingController', function ($scope, $routeParams, $http, $location) {
+app.controller('BookingController', function ($scope, $routeParams, $http, $location, $routeParams, $rootScope) {
+
+	$rootScope.menu = {
+		'home': false,
+		'destination': true,
+		'customize' : false,
+		'find_tour': false,
+		'blog' : false,
+		'contact' : false,
+		'about' : false
+	}
+
 	var id = $routeParams.tourId;
 	var start_date = $routeParams.start_date;
 	var number_of_people = $routeParams.number_of_people;

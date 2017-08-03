@@ -12,7 +12,7 @@
         <div ng-repeat="item in popularTours" class="item" ng-class="$first ? 'active': ''">
             <div class="fill" ng-style="{'background-image': 'url(' + item.img + ')'}"></div>
             <div class="carousel-caption caption-text">
-                <p>Special</p>
+                <p>Experience like a local</p>
                 <h1>{{item.period}} {{item.period > 1 ? 'days' : 'day'}} in {{item.name}}</h1>
                 <!-- <input type="button" name="" value="LEARN MORE"> -->
                 <a href="#!/tour/{{item.id}}">LEARN MORE</a>

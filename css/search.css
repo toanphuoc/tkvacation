@@ -73,9 +73,9 @@
 .tours-details-btn{
 	background: #4692e7;
     color: #fff;
-    font-size: 12px;
+    font-size: 10px;
     text-align: center;
-    padding: 14px 15px 12px;
+    padding: 10px 14px 10px;
     font-weight: bold;
     text-transform: uppercase;
     outline: 0;
@@ -100,7 +100,7 @@
 
 .price-value-dolar{
 	color: #1b1b1b;
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 800;
     line-height: 1;
     margin-top: 10px;
@@ -109,7 +109,7 @@
 
 .price-value-vnd{
 	color: #8c8c8c;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1;
     margin-top: 10px;

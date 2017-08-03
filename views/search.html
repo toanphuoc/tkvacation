@@ -61,12 +61,12 @@
 				</div>
 
 				<div class="row item" ng-repeat="item in tours" ng-show="tours.length > 0">
-					<div class="col-md-3 col-sm-3 col-xs-12 padding_0 item_img">
+					<div class="col-md-5 col-sm-5 col-xs-12 padding_0 item_img">
 						<a href="#!/tour/{{item.id}}" title="">
 							<img ng-src="{{item.img}}" alt="">
 						</a>	
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12 tour-detail-center">
+					<div class="col-md-5 col-sm-5 col-xs-12 tour-detail-center">
 						<h3 class="name">
 							<a class="name-text" href="#!/tour/{{item.id}}" title="">{{item.name}}</a>
 						</h3>
@@ -83,10 +83,10 @@
 						</div>
 						
 					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12 tour-detail-right">
+					<div class="col-md-2 col-sm-2 col-xs-12 tour-detail-right">
 						<div class="tours-price">
 							<p class="price-value-dolar">{{item.price | currency}}</p>
-							<p class="price-value-vnd">{{item.price_vnd | currency: "VND "}}</p>
+							<p class="price-value-vnd">{{item.price_vnd | currency: "VND ":0}}</p>
 							<!-- <input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS"> -->
 							<a href="#!/tour/{{item.id}}" class="tours-details-btn">VIEW DETAILS</a>
 						</div>
