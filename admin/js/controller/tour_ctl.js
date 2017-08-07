@@ -24,6 +24,10 @@ app.controller('TourController', function($scope, $rootScope, $http, $filter, $r
 				value.date_created = $filter('date')(new Date(value.date_created),'MMM dd, yyyy');
 			});
 
+			angular.forEach($scope.tours, function(value, key){
+				value.availability = $filter('date')(new Date(value.availability),'MMM dd, yyyy');
+			});
+
 			$scope.pages = response.data.page;
 		});
 	}

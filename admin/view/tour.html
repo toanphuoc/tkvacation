@@ -14,7 +14,7 @@
 				</div>
 			</div>
 			<div class="col-md-8 text-right">
-				<a href="" class="btn btn-primary">Create New</a>
+				<a href="#!/create_tour" class="btn btn-primary">Create New</a>
 			</div>
 		</div>
 	<table class="table-bordered" style="width: 100%;">
@@ -46,7 +46,7 @@
 					<span class="label" ng-class="tour.status == '1' ? 'label-success' : 'label-default'">{{tour.status == '1' ? 'Active' : 'Deactive'}}</span>
 				</td>
 				<td class="text-center"><a href="" class="btn btn-default">Itinerary</a></td>
-				<td class="text-center"><a href="" class="btn btn-default">Detail</a></td>
+				<td class="text-center"><a href="#!/tour/{{tour.id}}" class="btn btn-default">Detail</a></td>
 				
 				<td class="text-center">Delete</td>
 			</tr>

@@ -1,4 +1,4 @@
-app.controller('DestinationTourController', function ($scope, $routeParams, $http, $rootScope) {
+app.controller('DestinationTourController', function ($scope, $routeParams, $http, $rootScope, $filter) {
 
 	$rootScope.menu = {
 		'home': false,
@@ -17,6 +17,10 @@ app.controller('DestinationTourController', function ($scope, $routeParams, $htt
 		url: BASE_URL + 'tour/getTourByDestination/' + id
 	}).then(function successCallback(response){
 		$scope.data = response.data;
+
+		angular.forEach($scope.data.data, function(value, key){
+			value.availability = $filter('date')(new Date(value.availability),'MMM dd, yyyy');
+		});
 	});
 
 	//Get other destination

@@ -52,7 +52,7 @@ body {
 }
 
 .traveltour-top-bar{
-    padding: 10px 30px 20px 30px;
+    padding: 5px 30px 5px 30px;
     color: #e2e2e2;
     font-size: 16px;
 }
@@ -195,8 +195,8 @@ header.carousel .fill {
 }
 
 .tourmaster-tour-info-wrap{
-        margin-bottom: 0px;
-    margin-top: 17px;
+    margin-bottom: 0px;
+    margin-top: 5px;
 }
 
 .tourmaster-tour-info-duration-text{
@@ -610,6 +610,10 @@ footer {
     text-decoration: none;
 }
 
+.traveltour-footer-wrapper-skype{
+    margin-right: 8px;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px){
     .search-group .row div{
@@ -761,6 +765,12 @@ footer {
     .lst-popular-item .popular-tour-item{
         margin-bottom: 10px;
     }
+
+    .traveltour-footer-wrapper-skype{
+        margin-right: 0px;
+        display: block;
+        margin-bottom: 10px;
+    }
 }
 
 
@@ -899,6 +909,11 @@ footer {
 
     .popular-des .gdlr-core-title-item-link{
         margin-left: 25px;
+    }
+
+    .traveltour-footer-wrapper-skype{
+       margin-right: 8px;
+       display: inline-block;
     }
 
 }

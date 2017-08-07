@@ -34,6 +34,14 @@ app.config(function($routeProvider) {
 		templateUrl: 'view/destination_create.html',
 		controller: 'DestinationCreateController'
 	}).
+	when('/create_tour', {
+		templateUrl: 'view/tour_create.html',
+		controller: 'TourCreateController'
+	}).
+	when('/tour/:tour_id', {
+		templateUrl: 'view/tour_detail.html',
+		controller: 'TourDetailController'
+	}).
 	otherwise({ redirectTo: '/' })
 });
 

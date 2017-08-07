@@ -259,3 +259,8 @@ table tbody td{
 
 #tour .des{
 }
+
+#tour_create img{
+    width: 100%;
+    margin-bottom: 10px;
+}

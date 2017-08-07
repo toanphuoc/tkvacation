@@ -1,4 +1,4 @@
-app.controller('HomeController', function ($scope, $location, $http, $rootScope) {
+app.controller('HomeController', function ($scope, $location, $http, $rootScope, $filter) {
 
 	$rootScope.menu = {
 		'home': true,
@@ -40,6 +40,11 @@ app.controller('HomeController', function ($scope, $location, $http, $rootScope)
 		url: BASE_URL + 'tour/getPopularTour'
 	}).then(function successCallback(response){
 		$scope.popularTours = response.data;
+
+
+		angular.forEach($scope.popularTours, function(value, key){
+			value.availability = $filter('date')(new Date(value.availability),'MMM dd, yyyy');
+		});
 	});
 
 	/**

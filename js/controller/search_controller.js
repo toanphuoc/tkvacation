@@ -1,4 +1,4 @@
-app.controller('SearchController', function ($scope, $location, $routeParams, $http, $rootScope) {
+app.controller('SearchController', function ($scope, $location, $routeParams, $http, $rootScope, $filter) {
 
 	$rootScope.menu = {
 		'home': false,
@@ -110,6 +110,10 @@ app.controller('SearchController', function ($scope, $location, $routeParams, $h
 		url: url
 	}).then(function success(response){
 		$scope.tours = response.data.tours;
+
+		angular.forEach($scope.tours, function(value, key){
+			value.availability = $filter('date')(new Date(value.availability),'MMM dd, yyyy');
+		});
 		$scope.pagin = new Array(response.data.page.totalPage);
 	});
 
