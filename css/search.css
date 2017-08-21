@@ -3,7 +3,6 @@
     background-position: center;
     background-size: cover;
     position: relative;
-    height: 70%;
     margin-top: -50px;
     max-height: 500px;
 }
@@ -189,7 +188,18 @@
     padding: 10px 15px !important;
 }
 
+@media(min-width: 320px){
+   .tour-img-wapper{
+        height: 50%;
+   }
+}
+
 @media(min-width: 768px){
+
+    .tour-img-wapper{
+        height: 70%;
+    }
+
     .tour-detail-center{
         padding: 20px 35px;
         max-height: 245px;
@@ -201,6 +211,9 @@
 }
 
 @media(max-width: 768px){
+
+    
+
     .search-banel{
         padding-right: 0;
     }

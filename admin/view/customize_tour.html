@@ -1,1 +1,53 @@
-Customize Tour
+
+<style type="text/css">
+	.name, .name:hover, .name:active{
+		color: #333;
+		text-decoration: none;
+	}
+
+</style>
+<div id="mydiv" ng-show="loading">
+    <img src="imgs/loading.gif" class="ajax-loader"/>
+</div>
+<table class="table-bordered" width="100%">
+	<thead class="text-center">
+		<td width="5%"><strong>#</strong></td>
+		<td width=""><strong>Name</strong></td>
+		<td width=""><strong>Email</strong></td>
+		<td width=""><strong>Number Phone</strong></td>
+		<td width=""><strong>Nationality</strong></td>
+		<td width=""><strong>Destination</strong></td>
+		<td><strong></strong></td>
+	</thead>
+	<tbody>
+		<tr ng-repeat="c in data">
+			<td class="text-center">{{$index+1}}</td>
+			<td ng-class="{'unread': c.is_read == '0'}"><a class="name" href="#!/customize_tour_detail/{{c.id}}">{{c.name}}</a></td>
+			<td>{{c.email}}</td>
+			<td>{{c.phone_number}}</td>
+			<td>{{c.nationality}}</td>
+			<td>{{c.destination}}</td>
+			<td><button class="" ng-click="delete(c.id)"><i class="glyphicon glyphicon-trash"></i></button></td>
+		</tr>
+	</tbody>
+</table>
+
+<div ng-if="pages.totalPage > 1" class="text-right">
+	<nav aria-label="Page navigation">
+	  	<ul class="pagination">
+		<!--     <li>
+		      	<a href="#" aria-label="Previous">
+		        	<span aria-hidden="true">&laquo;</span>
+		      	</a>
+		    </li> -->
+		    <li ng-repeat="p in getNumber(pages.totalPage) track by $index" ng-class="$index + 1 == currentPage ? 'active' : ''">
+		    	<a href="#!/customize_tour?page={{$index + 1}}">{{$index+1}}</a>
+		    </li>
+		    <!-- <li>
+		      	<a href="#" aria-label="Next">
+		        	<span aria-hidden="true">&raquo;</span>
+		      	</a>
+		    </li> -->
+	  	</ul>
+	</nav>
+</div>

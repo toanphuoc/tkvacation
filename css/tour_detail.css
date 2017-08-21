@@ -70,6 +70,7 @@
     letter-spacing: 0px;
     text-transform: none;   
     color: #383838;
+    margin-bottom: 30px;
 }
 
 .info-overview h6 i, .info-itenirary h6 i, .info-price h6 i{
@@ -172,7 +173,7 @@
     }
 
     .tour-img-wapper{
-        height: 60%;
+        height: 50%;
     }
 
     .booking{

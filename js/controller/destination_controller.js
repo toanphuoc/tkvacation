@@ -10,11 +10,14 @@ app.controller('DestinationController', function ($scope, $http, $rootScope) {
 		'about' : false
 	}
 
+	$scope.loading = true;
  	$http({
 		method: 'GET',
 		url: BASE_URL + 'destination/listAvailable'
 	}).then(function successCallback(response){
 		$scope.des = response.data;
+	}).finally(function(){
+		$scope.loading =false;
 	});
 
 	$scope.showAllTours = function($event){

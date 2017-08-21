@@ -6,7 +6,8 @@ app.controller('DestinationDetailController', function($scope, $rootScope, $http
 		'booking' : false,
 		'message' : false,
 		'customize' : false,
-		'blog': false
+		'blog': false, 
+		'notify': false
 	};
 
 	$http({
@@ -20,12 +21,23 @@ app.controller('DestinationDetailController', function($scope, $rootScope, $http
 	});
 
 	$scope.update = function(){
-
+		$scope.error = false;
 		var url = BASE_URL + 'destination/update?id=' + $routeParams.id + '&token=' + $rootScope.token;
 
 		var title = $scope.des.title;
 		var file = $scope.myFile;
 		var status = $scope.checked;
+
+		if(file != undefined){
+			var size = $scope.myFile.size/1000000;
+        
+	        if(size > 5){
+	            $scope.error = true;
+	            $scope.error_message = 'The maximum size of file is 5M';
+	            return;
+	        }
+		}
+		
 
 		if(status === true)
 			status = 1;
@@ -35,7 +47,7 @@ app.controller('DestinationDetailController', function($scope, $rootScope, $http
         fd.append('file', file);
     	fd.append('title', title);
     	fd.append('status', status);
-
+    	$scope.loading = true;
     	$http({
     		method: 'POST',
     		url: url,
@@ -46,7 +58,12 @@ app.controller('DestinationDetailController', function($scope, $rootScope, $http
     	}).then(function success(response){
     		if(response.data.status){
     			$window.location = '#!/';
-    		}
+    		}else{
+                $scope.error = true;
+                $scope.error_message = response.data.message;
+            }
+    	}).finally(function(){
+    		$scope.loading = false;
     	}); 
     }
 

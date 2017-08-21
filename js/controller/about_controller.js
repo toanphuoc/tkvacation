@@ -1,4 +1,4 @@
-app.controller('AboutController', function ($scope, $rootScope) {
+app.controller('AboutController', function ($scope, $rootScope, $http) {
 
 	$rootScope.menu = {
 		'home': false,
@@ -9,4 +9,10 @@ app.controller('AboutController', function ($scope, $rootScope) {
 		'contact' : false,
 		'about' : true
 	}
+
+	$http({
+		url : BASE_URL + 'about/getAboutContent'
+	}).then(function (response){
+		$scope.about = response.data;
+	});
 });

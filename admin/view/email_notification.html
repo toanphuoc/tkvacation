@@ -1,0 +1,59 @@
+<h3>Email notification when booking</h3>
+
+<div style="width: 60%">
+	<table class="table-bordered" width="100%">
+		<thead class="text-center">
+			<td width="5%"><strong>#</strong></td>
+			<td width="25%"><strong>Email</strong></td>
+			<td width="15%"><strong>First Name</strong></td>
+			<td width="15%"><strong>Last Name</strong></td>
+			<td width="15%"><strong>Change</strong></td>
+		</thead>
+		<tbody>
+			<tr ng-repeat="d in data">
+				<td class="text-center">{{$index + 1}}</td>
+				<td>{{d.email}}</td>
+				<td>{{d.first_name}}</td>
+				<td>{{d.last_name}}</td>
+				<td class="text-center">
+					<button type="button" class="btn btn-primary" ng-click="edit(d)" data-toggle="modal">
+					  Change
+					</button>
+
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Change Email Notification</h4>
+      </div>
+      <div class="modal-body">
+        	<form>
+			  <div class="form-group">
+			    <label>Email address</label>
+			    <input type="email" class="form-control" placeholder="Email" ng-model="emailNofify.email">
+			  </div>
+			  <div class="form-group">
+			    <label>First Name</label>
+			    <input type="text" class="form-control" placeholder="First name" ng-model="emailNofify.first_name">
+			  </div>
+			  <div class="form-group">
+			    <label>Lasr Name</label>
+			    <input type="text" class="form-control" placeholder="Last name" ng-model="emailNofify.last_name">
+			  </div>
+			</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="save(emailNofify)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

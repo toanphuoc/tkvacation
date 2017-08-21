@@ -16,7 +16,7 @@ app.controller('TourController', function ($scope, $routeParams, $http, $locatio
 		method: 'GET',
 		url : BASE_URL + 'tour/getTourById/' + id
 	}).then(function successCallback(response){
-		$scope.tour = response.data.tour;
+		$scope.tour = response.data;
 		$scope.tour.availability = $filter('date')(new Date($scope.tour.availability),'MMM dd, yyyy');
 
 

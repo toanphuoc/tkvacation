@@ -10,11 +10,14 @@ app.controller('DestinationController', function($scope, $rootScope, $http){
 	};
 
 	function loadData(){
+		$scope.loading = true;
 		$http({
 			method: 'GET',
 			url: BASE_URL + 'destination/list?token=' + $rootScope.token
 		}).then(function successCallback(response){
 			$scope.des = response.data;
+		}).finally(function(){
+			$scope.loading = false;
 		});
 	}
 

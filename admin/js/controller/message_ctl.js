@@ -15,6 +15,7 @@ app.controller('MessageController', function($scope, $rootScope, $http, $filter,
 	$scope.currentPage = page;
 
 	function loadData(){
+		$scope.loading = true;
 		$http({
 			method: 'GET',
 			url : BASE_URL + 'contact/list?token=' + $rootScope.token + '&page=' + page
@@ -25,6 +26,8 @@ app.controller('MessageController', function($scope, $rootScope, $http, $filter,
 			});
 
 			$scope.pages = response.data.page;
+		}).finally(function(){
+			$scope.loading = false;
 		});
 	}
 

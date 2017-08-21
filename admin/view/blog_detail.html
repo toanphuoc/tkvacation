@@ -1,0 +1,48 @@
+<div id="mydiv" ng-show="loading">
+    <img src="imgs/loading.gif" class="ajax-loader"/>
+</div>
+<div id="blog_detail" class="row">
+	<div class="col-md-12">
+		<div class="form-horizontal">
+			<div class="form-group">
+			    <label class="col-sm-2 control-label">Blog name</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" placeholder="Blog name" ng-model="blog.blog_name">
+			    </div>
+			</div>
+		  	<div class="form-group">
+			    <label class="col-sm-2 control-label">Image</label>
+			    <div class="col-sm-5">
+			      	<img ng-src="../{{blog.blog_img}}" width="100%">
+			      	<input type="file" style="margin-top: 10px;" name=""  accept="image/*" file-model = "myFile">
+			    </div>
+		  	</div>
+		  	<div class="form-group">
+			    <label class="col-sm-2 control-label">Overview</label>
+			    <div class="col-sm-8">
+			      	<textarea ng-model="blog.overview" data-ck-editor></textarea>
+			    </div>
+		  	</div>
+		  	<div class="form-group">
+			    <label class="col-sm-2 control-label">Status</label>
+			    <div class="col-sm-5">
+			     	<input type="checkbox" ng-model="checked">
+			    </div>
+		  	</div>
+		  	<div class="form-group">
+		  		<div class="col-sm-offset-2 col-sm-10">
+				   	<button type="submit" class="btn btn-primary" ng-click="edit(blog.id)">Edit</button>
+				   	<a href="#!/blog" class="btn btn-default">Cancel</a>
+				</div>
+		  	</div>
+		  	<div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			     	<div class="alert alert-danger" role="alert" ng-show="error">
+			     		<label>{{error_message}}</label>
+			     	</div>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+

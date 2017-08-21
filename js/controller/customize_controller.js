@@ -21,9 +21,10 @@ app.controller('CustumizeTourController', function ($scope, $http, $rootScope) {
 
 	$scope.send = function(){
 		$scope.submitted = true;
-		 if(!$scope.customize_form.$valid) {
+		if(!$scope.customize_form.$valid) {
 	       return;
-	     }
+	    }
+	    
 		$http({
 			method: 'POST',
  			url : BASE_URL + 'customizetour/create',

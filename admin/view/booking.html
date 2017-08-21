@@ -1,1 +1,56 @@
-Booking
+
+<style type="text/css">
+	.name, .name:hover, .name:active{
+		color: #333;
+		text-decoration: none;
+	}
+
+</style>
+<div id="mydiv" ng-show="loading">
+    <img src="imgs/loading.gif" class="ajax-loader"/>
+</div>
+<table class="table-bordered" width="100%">
+	<thead class="text-center">
+		<td width="5%"><strong>#</strong></td>
+		<td width="15%"><strong>First Name</strong></td>
+		<td width="15%"><strong>Last Name</strong></td>
+		<td width="25%"><strong>Email</strong></td>
+		<td width="15%"><strong>Phone</strong></td>
+		<td width="15%"><strong>Date Created</strong></td>
+		<td width="5%"><strong></strong></td>
+		<td width="5%"><strong></strong></td>
+	</thead>
+	<tbody>
+		<tr ng-repeat="b in bookings">
+			<td class="text-center">{{$index + 1}}</td>
+
+			<td ng-class="{'unread': b.is_check == '0'}">{{b.first_name}}</td>
+			<td ng-class="{'unread': b.is_check == '0'}">{{b.last_name}}</td>
+			<td ng-class="{'unread': b.is_check == '0'}">{{b.email}}</td>
+			<td ng-class="{'unread': b.is_check == '0'}">{{b.phone}}</td>
+			<td ng-class="{'unread': b.is_check == '0'}" class="text-center">{{b.date_created}}</td>
+			<td class="text-center"><a href="#!/booking/{{b.id}}" class="btn btn-default">Detail</a></td>
+			<td class="text-center"><button class="" ng-click="delete(b.id)"><i class="glyphicon glyphicon-trash"></i></button></td>
+		</tr>
+	</tbody>
+</table>
+
+<div ng-if="pages.totalPage > 1" class="text-right">
+	<nav aria-label="Page navigation">
+	  	<ul class="pagination">
+		<!--     <li>
+		      	<a href="#" aria-label="Previous">
+		        	<span aria-hidden="true">&laquo;</span>
+		      	</a>
+		    </li> -->
+		    <li ng-repeat="p in getNumber(pages.totalPage) track by $index" ng-class="$index + 1 == currentPage ? 'active' : ''">
+		    	<a href="#!/customize_tour?page={{$index + 1}}">{{$index+1}}</a>
+		    </li>
+		    <!-- <li>
+		      	<a href="#" aria-label="Next">
+		        	<span aria-hidden="true">&raquo;</span>
+		      	</a>
+		    </li> -->
+	  	</ul>
+	</nav>
+</div>

@@ -18,6 +18,10 @@ app.config(function($routeProvider) {
 		templateUrl: 'view/booking.html',
 		controller: 'BookingController'
 	}).
+	when("/booking/:id", {
+		templateUrl: 'view/booking_detail.html',
+		controller: 'BookingDetailController'
+	}).
 	when('/message', {
 		templateUrl: 'view/contact_message.html',
 		controller: 'MessageController'
@@ -30,6 +34,14 @@ app.config(function($routeProvider) {
 		templateUrl: 'view/blog.html',
 		controller: 'BlogController'
 	}).
+	when('/blog/:blog_id', {
+		templateUrl: 'view/blog_detail.html',
+		controller: 'BlogDetailController'
+	}).
+	when('/create_blog', {
+		templateUrl: 'view/blog_create.html',
+		controller: 'BlogCreateController'
+	}).
 	when('/create_destination', {
 		templateUrl: 'view/destination_create.html',
 		controller: 'DestinationCreateController'
@@ -41,6 +53,18 @@ app.config(function($routeProvider) {
 	when('/tour/:tour_id', {
 		templateUrl: 'view/tour_detail.html',
 		controller: 'TourDetailController'
+	}).
+	when('/about', {
+		templateUrl: 'view/about.html',
+		controller: 'AboutController'
+	}).
+	when('/customize_tour_detail/:id', {
+		templateUrl: 'view/customize_tour_detail.html',
+		controller: 'CustomizeTourDetailController'
+	}).
+	when('/email_notification', {
+		templateUrl: 'view/email_notification.html',
+		controller: 'EmailNotificationController'
 	}).
 	otherwise({ redirectTo: '/' })
 });

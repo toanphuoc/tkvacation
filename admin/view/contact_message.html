@@ -5,9 +5,14 @@
 	}
 
 </style>
+
+<div id="mydiv" ng-show="loading">
+    <img src="imgs/loading.gif" class="ajax-loader"/>
+</div>
 <table class="table-bordered" style="width: 100%;">
 	<thead class="text-center">
-		<td width="20%"><strong>Date</strong></td>
+		<td width="5%"><strong>#</strong></td>
+		<td width="15%"><strong>Date</strong></td>
 		<td width="10%"><strong>Name</strong></td>
 		<td width="10%"><strong>Email</strong></td>
 		<td width="10%"><strong>Phone</strong></td>
@@ -16,6 +21,7 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="m in messages">
+			<td>{{$index+1}}</td>
 			<td>{{m.date_created}}</td>
 			<!-- <td>{{m.name}}</td> -->
 			<td ng-class="{'unread': m.is_read == '0'}"><a class="name" href="javascript:void(0)" ng-click="changeStatus(m.id, m.is_read)">{{ m.name | limitTo: 20 }}{{m.name.length > 20 ? '...' : ''}}</a></td>

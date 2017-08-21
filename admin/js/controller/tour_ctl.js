@@ -14,6 +14,7 @@ app.controller('TourController', function($scope, $rootScope, $http, $filter, $r
 	$scope.currentPage = page;
 
 	function loadData(){
+		$scope.loading = true;
 		$http({
 			method: 'GET',
 			url : BASE_URL + 'tour/getList?token=' + $rootScope.token + '&page=' + $scope.currentPage
@@ -22,13 +23,12 @@ app.controller('TourController', function($scope, $rootScope, $http, $filter, $r
 
 			angular.forEach($scope.tours, function(value, key){
 				value.date_created = $filter('date')(new Date(value.date_created),'MMM dd, yyyy');
-			});
-
-			angular.forEach($scope.tours, function(value, key){
 				value.availability = $filter('date')(new Date(value.availability),'MMM dd, yyyy');
 			});
 
 			$scope.pages = response.data.page;
+		}).finally(function(){
+			$scope.loading = false;
 		});
 	}
 
@@ -49,6 +49,8 @@ app.controller('TourController', function($scope, $rootScope, $http, $filter, $r
 		if(id == 0){
 			loadData();
 		}else{
+
+			$scope.loading = true;
 			$http({
 				url : BASE_URL + 'tour/tourByDestination?destinationId=' + id + '&token=' + $rootScope.token + '&page=' + $scope.currentPage
 			}).then(function success(response){
@@ -59,11 +61,26 @@ app.controller('TourController', function($scope, $rootScope, $http, $filter, $r
 				});
 
 				$scope.pages = response.data.page;
+			}).finally(function(){
+				$scope.loading = false;
 			});
 		}
 	});
 
 	loadData();
 
+	$scope.changeStatus = function(id, status){
+		if(status == '1')
+			status = 0;
+		else status = 1;
 
+		$http({
+			method: 'POST',
+			url: BASE_URL + 'tour/changeStatus?token=' + $rootScope.token + '&id=' + id + '&status=' + status
+		}).then(function success(response){
+			if(response.data.status == true){
+				loadData();
+			}
+		});
+	}
 });

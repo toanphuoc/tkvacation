@@ -18,7 +18,7 @@ app.controller('BookingController', function ($scope, $routeParams, $http, $loca
 		method: 'GET',
 		url : BASE_URL + 'tour/getTourById/' + id
 	}).then(function successCallback(response){
-		$scope.tour = response.data.tour;
+		$scope.tour = response.data;
 	});
 
 	$scope.booking = {tour_id: id, start_date: start_date, number_of_people: number_of_people};
