@@ -20,6 +20,11 @@
     color: #fff;
 }
 
+.customize_tour{
+    position: relative;
+    padding-bottom: 30px;
+}
+
 .customize_tour .title{
     font-size: 20px;
     font-weight: 600;

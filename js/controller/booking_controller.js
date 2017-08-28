@@ -30,6 +30,7 @@ app.controller('BookingController', function ($scope, $routeParams, $http, $loca
 	       	return;
 	    }
 
+	    $scope.loading = true;
 	    $http({
 	    	method: 'POST',
 	    	url: BASE_URL + 'booking/create',
@@ -39,6 +40,8 @@ app.controller('BookingController', function ($scope, $routeParams, $http, $loca
 	    	if(response.data.status){
 	    		$location.path('/booking_success');
 	    	}
+	    }).finally(function(){
+	    	$scope.loading = false;
 	    });
 	}
 });

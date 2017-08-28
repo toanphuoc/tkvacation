@@ -1,6 +1,7 @@
 #blog_detail{
 	padding-top: 50px;
     background: #F3F3F3;
+    padding-bottom: 30px;
 }
 
 .blog-name{
@@ -9,7 +10,7 @@
 }
 
 .blog-name h3{
-	    font-size: 20px;
+	font-size: 20px;
     margin-top: 15px;
     font-weight: 600;
     color: #fff;

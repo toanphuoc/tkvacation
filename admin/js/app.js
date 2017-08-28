@@ -42,6 +42,10 @@ app.config(function($routeProvider) {
 		templateUrl: 'view/blog_create.html',
 		controller: 'BlogCreateController'
 	}).
+	when('/blog_imgs/:blog_id', {
+		templateUrl: 'view/blog_images.html',
+		controller: 'BlogImagesController'
+	}).
 	when('/create_destination', {
 		templateUrl: 'view/destination_create.html',
 		controller: 'DestinationCreateController'
@@ -65,6 +69,10 @@ app.config(function($routeProvider) {
 	when('/email_notification', {
 		templateUrl: 'view/email_notification.html',
 		controller: 'EmailNotificationController'
+	}).
+	when('/profile', {
+		templateUrl: 'view/profile.html',
+		controller: 'ProfileController'
 	}).
 	otherwise({ redirectTo: '/' })
 });

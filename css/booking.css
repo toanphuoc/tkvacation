@@ -10,6 +10,7 @@
 .booking{
 	/*background: #F5F5F5;*/
     padding: 55px 0 0 0;
+    position: relative;
 }
 
 .tour-name{

@@ -24,10 +24,11 @@ app.controller('CustumizeTourController', function ($scope, $http, $rootScope) {
 		if(!$scope.customize_form.$valid) {
 	       return;
 	    }
-	    
+
+	    $scope.loading = true;
 		$http({
 			method: 'POST',
- 			url : BASE_URL + 'customizetour/create',
+ 			url : BASE_URL_CUSTOMIZE_TOUR + 'create',
  			data: $.param($scope.customize),
  			headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
 		}).then(function success(response){
@@ -38,6 +39,8 @@ app.controller('CustumizeTourController', function ($scope, $http, $rootScope) {
 
  				setTimeout(function(){ $('.message_success').addClass('hidden'); }, 5000);
  			}
+		}).finally(function(){
+			$scope.loading = false;
 		});
 	}
 });

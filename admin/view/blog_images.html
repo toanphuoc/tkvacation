@@ -1,0 +1,38 @@
+<style type="text/css">
+	table img{
+		width: 100%;
+	}
+</style>
+
+<div id="mydiv" ng-show="loading">
+    <img src="imgs/loading.gif" class="ajax-loader"/>
+</div>
+
+<div class="text-left" style="margin-bottom: 20px;" ng-show="imgs.length < 10">
+	<input type="button" name="" value="Add" class="btn btn-primary" ng-click="add()">
+	<span>Maxinum image size is 5M.</span>
+	<input type="file" id="file" value="Add" class="hide file" accept="image/*">
+</div>
+
+<!-- <div class="alert alert-danger" role="alert" ng-show="error">
+	<label>{{error_message}}</label>
+</div> -->
+
+<table class="table-bordered" width="60%">
+	<thead class="text-center">
+		<td width="5%"><strong>#</strong></td>
+		<td width="40%"><strong>Images</strong></td>
+		<td width="5%"><strong></strong></td>
+	</thead>
+	<tbody>
+		<tr ng-repeat="img in imgs">
+			<td class="text-center">{{$index + 1}}</td>
+			<td>
+				<img ng-src="../{{img.url}}">
+			</td>
+			<td class="text-center">
+				<button class="" ng-click="delete(img.id)"><i class="glyphicon glyphicon-trash"></i></button>
+			</td>
+		</tr>
+	</tbody>
+</table>
