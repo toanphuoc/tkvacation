@@ -1,6 +1,10 @@
+.p-destinations{
+    background: url('../imgs/des-background.jpg');
+}
+
 .destinations{
 	/*margin-top: 50px;*/
-    padding-top: 50px;
+    padding-top: 50px; 
 }
 
 .destinations .item{

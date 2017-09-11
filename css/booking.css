@@ -9,7 +9,7 @@
 
 .booking{
 	/*background: #F5F5F5;*/
-    padding: 55px 0 0 0;
+    padding: 55px 0 30px 0;
     position: relative;
 }
 
@@ -52,7 +52,7 @@
     padding-top: 15px !important;
 }
 
-.form-booking input, .form-booking textarea{
+.form-booking input, .form-booking textarea, .form-booking select{
 	border-color: #e6e6e6;
 	background: #ffffff;
 	color: #545454;
@@ -70,6 +70,10 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     resize: vertical;
+}
+
+.form-booking select{
+    padding: 12px 17px;
 }
 
 .form-booking button{

@@ -60,6 +60,7 @@ app.controller('BlogImagesController', function($scope, $rootScope, $http, $rout
         fd.append('blog_id', id);
     	fd.append('file', file);
 
+    	$scope.loading = true;
     	$http({
     		method: 'POST',
     		url: BASE_URL + 'blog/addNewImageBlog?token=' + $rootScope.token,
@@ -75,7 +76,9 @@ app.controller('BlogImagesController', function($scope, $rootScope, $http, $rout
                 $scope.error = true;
                 $scope.error_message = response.data.message;
             }
-    	})
+    	}).finally(function(){
+    		$scope.loading = false;
+    	});
 	});
 		
 });

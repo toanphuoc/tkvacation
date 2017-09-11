@@ -1,3 +1,4 @@
+<div style="position: relative;">
 <div id="mydiv" ng-show="loading">
     <img src="imgs/loading.gif" class="ajax-loader"/>
 </div>
@@ -23,13 +24,14 @@
 	<table class="table-bordered" style="width: 100%;">
 		<thead class="text-center">
 			<td width="5%"><strong>#</strong></td>
-			<td width="20%"><strong>Name</strong></td>
+			<td width="17%"><strong>Name</strong></td>
 			<td width="5%"><strong>Period (days)</strong></td>
 			<td width="10%"><strong>Availability</strong></td>
-			<td width="25%"><strong>Price (USD/VND)</strong></td>
+			<td width="22%"><strong>Price (USD/VND)</strong></td>
 			<td width="10%"><strong>Date Created</strong></td>
 			<td width="5%"><strong>Booking</strong></td>
 			<td width="5%"><strong>Status</strong></td>
+			<td width="5%"><strong>Pictures</strong></td>
 			<td width="5%"></td>
 			<td width="5%"></td>
 		</thead>
@@ -47,6 +49,7 @@
 				<td class="text-center">
 					<span class="label" ng-class="tour.status == '1' ? 'label-success' : 'label-default'">{{tour.status == '1' ? 'Active' : 'Deactive'}}</span>
 				</td>
+				<td class="text-center"><a href="#!/tour/tour_images/{{tour.id}}" class="btn btn-default">Pictures</a></td>
 				<td class="text-center"><a href="#!/tour/{{tour.id}}" class="btn btn-default">Detail</a></td>
 				
 				<td class="text-center">
@@ -74,4 +77,5 @@
 		  	</ul>
 		</nav>
 	</div>
+</div>
 </div>

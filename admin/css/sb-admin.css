@@ -278,7 +278,7 @@ table tbody td{
 
 .ajax-loader {
     position: absolute;
-    left: 50%;
+    left: 45%;
     top: 50%;
     margin-top: -32px;  /* -1 * image height / 2 */
     display: block;  

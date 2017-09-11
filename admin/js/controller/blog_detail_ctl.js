@@ -21,6 +21,12 @@ app.controller('BlogDetailController', function($scope, $rootScope, $http, $rout
 	});
 
 	$scope.edit = function(id){
+
+		if($scope.blog.blog_name.trim() === ""){
+			alert("Please type the blog name.");
+			return;
+		}
+
 		$scope.error = false;
 		var url = BASE_URL + 'blog/edit?id=' + id + '&token=' + $rootScope.token;
 

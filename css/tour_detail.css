@@ -9,7 +9,7 @@
 
 .tour{
 	background: #F5F5F5;
-    padding: 55px 0 0 0;
+    padding: 55px 0 35px 0;
 }
 
 .tour-info-top{
@@ -51,17 +51,16 @@
 	color: #9a9a9a;
     font-size: 14px;
     font-weight: 600;
-    padding: 28px 25px 28px;
     display: inline-block;
     margin-right: 10px;
     text-decoration: none;
     cursor: pointer;
+    padding: 10px 10px !important;
 }
 
 .info-overview, .info-itenirary, .info-price{
 	    /*background: #fff;*/
-    padding: 30px 0px 25px 0;
-    border-bottom: 2px solid #EBEBEB;
+    padding: 30px 0px 0px 0;
 }
 
 .info-overview h6, .info-itenirary h6, .info-price h6{
@@ -105,7 +104,7 @@
 
 .booking{
 	border-left: 1px solid #e1e1e1;
-    padding: 0px 0px 45px;
+    padding: 0px 0px 35px;
     border-right: 1px solid #e1e1e1;
     border-bottom: 1px solid #e1e1e1;
 }
@@ -165,7 +164,9 @@
     font-weight: 500;
 }
 
-
+.carousel-inner img{
+    margin: 0 auto;
+}
 
 @media(min-width: 320px){
     .price p{
@@ -179,6 +180,11 @@
     .booking{
         margin-top: 30px;
     }
+
+    .carousel-inner img{
+        max-height: 300px;
+        min-height: 300px
+    }
 }
 
 @media(min-width: 768px){
@@ -189,6 +195,11 @@
 
     .booking{
         margin-top: 0px;
+    }
+
+    .carousel-inner img{
+        max-height: 500px;
+        min-height: 500px
     }
 }
 

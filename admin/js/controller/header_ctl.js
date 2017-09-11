@@ -6,7 +6,7 @@ app.controller('HeaderController', function($scope, $http, $rootScope){
 	$scope.logout = function(){
 		$http({
 			method: 'POST',
-			url: BASE_URL + 'user/logout?token=' + TOKEN
+			url: BASE_URL + 'user/logout?token=' + $rootScope.token
 		}).then(function success(response){
 			if(response.data.status === true){
 				$.removeCookie('token');

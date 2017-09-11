@@ -10,6 +10,10 @@ app.controller('TourController', function ($scope, $routeParams, $http, $locatio
 		'about' : false
 	}
 
+	$('.carousel').carousel({
+	    interval: 5000 //changes the speed
+	});
+
 	var id = $routeParams.tourId;
 
 	$http({
@@ -27,6 +31,10 @@ app.controller('TourController', function ($scope, $routeParams, $http, $locatio
 		$('#itineray').tab('show');
 	}
 
+	$scope.showImagesTab = function(){
+		$('#images').tab('show');
+	}
+
 	$scope.showOverviewTab = function(){
 		$('#overview').tab('show');
 	}
@@ -34,8 +42,6 @@ app.controller('TourController', function ($scope, $routeParams, $http, $locatio
 	$scope.showPriceTab = function(){
 		$('#prices').tab('show');
 	}
-
-
 
 	$('#datepicker').datepicker({
 		autoSize: true, 
@@ -53,4 +59,20 @@ app.controller('TourController', function ($scope, $routeParams, $http, $locatio
 
 	    $location.path('/booking').search({tourId: id, start_date: $scope.booking.start_date, number_of_people: $scope.booking.number_of_people});
  	}
+
+ 	$http({
+ 		url : BASE_URL + 'tour/getAllTourImages?tour_id=' + id
+ 	}).then(function success(response){
+ 		$scope.imgs = response.data;
+ 	});
+
+ 	$scope.prevCarouel = function(){
+		$('.carousel').carousel('prev');
+	}
+
+	$scope.nextCarouel = function(){
+		$('.carousel').carousel('next');
+	}
+
+
 });

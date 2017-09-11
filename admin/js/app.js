@@ -58,6 +58,10 @@ app.config(function($routeProvider) {
 		templateUrl: 'view/tour_detail.html',
 		controller: 'TourDetailController'
 	}).
+	when('/tour/tour_images/:tour_id', {
+		templateUrl: 'view/tour_images.html',
+		controller: 'TourImagesController'
+	}).
 	when('/about', {
 		templateUrl: 'view/about.html',
 		controller: 'AboutController'

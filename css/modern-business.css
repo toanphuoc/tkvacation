@@ -65,6 +65,10 @@ body {
     margin-left: 2px;
 }
 
+.traveltour-top-bar .social a{
+    color: rgb(70, 146, 231);
+}
+
 .tourmaster-tour-category-head{
     position: absolute;
     bottom: 0px;
@@ -168,7 +172,7 @@ header.carousel .fill {
     padding-bottom: 80px;
 }
 .popular-tour .title{
-    margin-top: 70px;
+    margin-top: 50px;
     padding: 0 30px;
 }
 
@@ -704,11 +708,7 @@ footer {
     }
 
     .search-group{
-        padding-bottom: 30px;
-    }
-
-    .search-group .search-btn{
-        margin-top: 40px;
+        display: none;
     }
 
     .contact-details {
@@ -828,6 +828,7 @@ footer {
 
     .search-group{
         padding-bottom: 60px;
+        display: block;
     }
 
     .search-group .search-btn{

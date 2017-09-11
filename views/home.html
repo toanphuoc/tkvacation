@@ -13,7 +13,7 @@
             <div class="fill" ng-style="{'background-image': 'url(' + item.img + ')'}"></div>
             <div class="carousel-caption caption-text">
                 <p>Experience like a local</p>
-                <h1>{{item.period}} {{item.period > 1 ? 'days' : 'day'}} in {{item.name}}</h1>
+                <h1>{{item.name}}</h1>
                 <!-- <input type="button" name="" value="LEARN MORE"> -->
                 <a href="#!/tour/{{item.id}}">LEARN MORE</a>
             </div>
@@ -105,7 +105,7 @@
                         <div class="popular-tour-item">
                             <div class="popular-tour-item-img">
                                 <a href="#!/tour/{{item.id}}">
-                                    <img ng-src="{{item.img}}">
+                                    <img ng-src="{{item.img}}" alt="{{item.name}}">
                                 </a>
                             </div>
                             
@@ -146,7 +146,7 @@
             <div class="row margin_0">
                 <div ng-repeat="item in des">
                     <div class="col-md-3 m-col-md-5 col-sm-12 col-xs-12 margin_0 padding_0 item" ng-mouseover="showAllTours($event)" ng-mouseleave="hiddenAllTours($event)">
-                        <img ng-src="{{item.des.img}}">
+                        <img ng-src="{{item.des.img}}" alt="{{item.des.title}}">
                         <div class="category-overlay hidden"></div>
                         <div class="tourmaster-tour-category-overlay"></div>
                         <div class="tourmaster-tour-category-head">

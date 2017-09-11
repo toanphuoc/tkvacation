@@ -2,30 +2,33 @@
 <div class="about-img-wapper text-center">
     <h1>Destinations</h1>  
 </div>
-<div class="container destinations">
-	<div class="row margin_0">
-			<div class="col-md-4 col-sm-6" ng-repeat="item in des" ng-mouseover="showAllTours($event)" ng-mouseleave="hiddenAllTours($event)">
-				<div style="" class="item">
-					<img ng-src="{{item.des.img}}">
-					<div class="category-overlay hidden"></div>
-					<div class="category-overlay-front"></div>
-					<div class="category-head">
-						<div class="category-head-display">
-							<h3 class="category-title">
-								<i class="fa fa-map-marker" aria-hidden="true"></i>
-								{{item.des.title}}
-							</h3>
-							<div class="category-count">
-								{{item.totalTours}} {{item.totalTours > 1 ? 'Tours' : 'Tour'}}
+
+<div class="p-destinations">
+	<div class="container destinations">
+		<div class="row margin_0">
+				<div class="col-md-4 col-sm-6" ng-repeat="item in des" ng-mouseover="showAllTours($event)" ng-mouseleave="hiddenAllTours($event)">
+					<div style="" class="item">
+						<img ng-src="{{item.des.img}}">
+						<div class="category-overlay hidden"></div>
+						<div class="category-overlay-front"></div>
+						<div class="category-head">
+							<div class="category-head-display">
+								<h3 class="category-title">
+									<i class="fa fa-map-marker" aria-hidden="true"></i>
+									{{item.des.title}}
+								</h3>
+								<div class="category-count">
+									{{item.totalTours}} {{item.totalTours > 1 ? 'Tours' : 'Tour'}}
+								</div>
+								<div class="clearfix"></div>
 							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="category-head-animate hidden">
-							<a href="#!/tours/{{item.des.id}}" class="category-head-link">VIEW ALL TOURS</a>
-							<div class="category-head-divider"></div>
+							<div class="category-head-animate hidden">
+								<a href="#!/tours/{{item.des.id}}" class="category-head-link">VIEW ALL TOURS</a>
+								<div class="category-head-divider"></div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+		</div>
 	</div>
 </div>

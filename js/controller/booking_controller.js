@@ -13,6 +13,7 @@ app.controller('BookingController', function ($scope, $routeParams, $http, $loca
 	var id = $routeParams.tourId;
 	var start_date = $routeParams.start_date;
 	var number_of_people = $routeParams.number_of_people;
+	// var title = //$('.title_contact option:select').val();
 
 	$http({
 		method: 'GET',
@@ -22,6 +23,7 @@ app.controller('BookingController', function ($scope, $routeParams, $http, $loca
 	});
 
 	$scope.booking = {tour_id: id, start_date: start_date, number_of_people: number_of_people};
+
 
 	$scope.submitBooking = function(){
 		$scope.submitted = true;

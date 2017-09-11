@@ -31,6 +31,8 @@ app.controller('ProfileController', function($scope, $http, $rootScope){
 
 				$.cookie('token', response.data.token, { expires: 1 });
 				$rootScope.token = response.data.token;
+
+				
 				$scope.profile = {
 
 				};
