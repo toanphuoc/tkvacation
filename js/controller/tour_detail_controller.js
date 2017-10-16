@@ -21,7 +21,10 @@ app.controller('TourController', function ($scope, $routeParams, $http, $locatio
 		url : BASE_URL + 'tour/getTourById/' + id
 	}).then(function successCallback(response){
 		$scope.tour = response.data;
-		$scope.tour.availability = $filter('date')(new Date($scope.tour.availability),'MMM dd, yyyy');
+		$scope.tour.availability = $filter('date')(new Date($scope.tour.availability.replace(/-/g, "/")),'MMM dd, yyyy');
+
+		$scope.tour.itinerary =  $scope.tour.itinerary == 'null' ? '' : $scope.tour.itinerary;
+		$scope.tour.price_detail =  $scope.tour.price_detail == 'null' ? '' : $scope.tour.price_detail;
 
 
 		$scope.itineraries = response.data.itinerary;

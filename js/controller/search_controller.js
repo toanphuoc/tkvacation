@@ -112,7 +112,7 @@ app.controller('SearchController', function ($scope, $location, $routeParams, $h
 		$scope.tours = response.data.tours;
 
 		angular.forEach($scope.tours, function(value, key){
-			value.availability = $filter('date')(new Date(value.availability),'MMM dd, yyyy');
+			value.availability = $filter('date')(new Date(value.availability.replace(/-/g, "/")),'MMM dd, yyyy');
 		});
 		$scope.pagin = new Array(response.data.page.totalPage);
 	});

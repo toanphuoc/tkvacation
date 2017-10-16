@@ -10,7 +10,7 @@
 
 				<div class="row item" ng-repeat="blog in blogs">
 					<div class="col-md-5 col-sm-4 col-xs-12 item_img">
-						<a href="#!/blog/{{blog.id}}">
+						<a href="#!/blog/{{blog.id}}" title="TK Vacation - {{blog.blog_name}}">
 							<div class="img" ng-style="{'background-image': 'url(' + blog.blog_img + ')'}"></div>
 						</a>
 					</div>
@@ -21,13 +21,13 @@
 
 							<label>{{blog.date_created}}</label></p>
 						</div>
-						<a class="blog_name" href="#!/blog/{{blog.id}}">{{blog.blog_name}}</a>
+						<a class="blog_name" title="TK Vacation - {{blog.blog_name}}" href="#!/blog/{{blog.id}}">{{blog.blog_name}}</a>
 						<div class="item_detail_text" ng-bind-html="blog.overview | limitTo: 550">
 							<span ng-if="blog.overview.length > 500">...</span>
 						</div>
 
 						<div class="item_bottom">
-							<a href="#!/blog/{{blog.id}}">READ MORE...</a>
+							<a href="#!/blog/{{blog.id}}" title="TK Vacation - {{blog.blog_name}}">READ MORE...</a>
 						</div>
 						
 					</div>
@@ -44,7 +44,7 @@
 				      	</a>
 				    </li> -->
 				    <li ng-repeat="p in pages track by $index" ng-class="$index + 1 == currentPage ? 'active' : ''">
-				    	<a href="#!/blogs?page={{$index + 1}}">{{$index+1}}</a>
+				    	<a href="#!/blogs?page={{$index + 1}}" title="TK Vacation">{{$index+1}}</a>
 				    </li>
 				    <!-- <li>
 				      	<a href="#" aria-label="Next">

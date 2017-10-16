@@ -15,7 +15,7 @@
                 <p>Experience like a local</p>
                 <h1>{{item.name}}</h1>
                 <!-- <input type="button" name="" value="LEARN MORE"> -->
-                <a href="#!/tour/{{item.id}}">LEARN MORE</a>
+                <a href="#!/tour/{{item.id}}" title="TK Vacation - {{item.name}}" >LEARN MORE</a>
             </div>
         </div>
 
@@ -30,10 +30,10 @@
     </div>
 
     <!-- Controls -->
-    <a class="left carousel-control" style="width: 5%;" href="javascript:void(0)" ng-click="prevCarouel()" data-slide="prev">
+    <a class="left carousel-control" title="TK Vacation" style="width: 5%;" href="javascript:void(0)" ng-click="prevCarouel()" data-slide="prev">
         <span class="icon-prev"></span>
     </a>
-    <a class="right carousel-control" style="width: 5%;" href="javascript:void(0)" ng-click="nextCarouel()" data-slide="next">
+    <a class="right carousel-control" title="TK Vacation" style="width: 5%;" href="javascript:void(0)" ng-click="nextCarouel()" data-slide="next">
         <span class="icon-next"></span>
     </a>
 </header>
@@ -91,7 +91,7 @@
                 <div class="row">
                     <div class="col-md-12 title">
                         <h3>Popular Tour Packages</h3>
-                        <a class="gdlr-core-title-item-link" href="#!/tours/1">
+                        <a title="TK Vacation" class="gdlr-core-title-item-link" href="#!/tours/1">
                             <span class="gdlr-core-separator">/</span>
                         View All Tours</a>
                     </div>
@@ -104,14 +104,14 @@
                     <div class="col-md-3 col-sm-6" ng-repeat="item in popularTours">
                         <div class="popular-tour-item">
                             <div class="popular-tour-item-img">
-                                <a href="#!/tour/{{item.id}}">
-                                    <img ng-src="{{item.img}}" alt="{{item.name}}">
+                                <a href="#!/tour/{{item.id}}" title="TK Vacation - {{item.name}}">
+                                    <img ng-src="{{item.img}}" alt="TK Vacation - {{item.name}}">
                                 </a>
                             </div>
                             
                             <div class="tourmaster-tour-content-wrap">
                                 <h3 class="tourmaster-tour-title">
-                                    <a href="#!/tour/{{item.id}}">{{item.name}}</a>
+                                    <a title="TK Vacation - {{item.name}}" href="#!/tour/{{item.id}}">{{item.name}}</a>
                                 </h3>
                                 <div class="price">
                                     <span>{{item.price | currency}}</span>
@@ -136,7 +136,7 @@
                 <div class="col-md-12 title">
                     <h3>
                     <i class="glyphicon glyphicon-map-marker" style=""></i> <span>Popular Destinations</span></h3>
-                        <a class="gdlr-core-title-item-link" href="#!/destinations">
+                        <a class="gdlr-core-title-item-link" href="#!/destinations" title="TK Vacation">
                             <span class="gdlr-core-separator">/</span>
                         View All Destinations</a>
                 </div>
@@ -146,7 +146,7 @@
             <div class="row margin_0">
                 <div ng-repeat="item in des">
                     <div class="col-md-3 m-col-md-5 col-sm-12 col-xs-12 margin_0 padding_0 item" ng-mouseover="showAllTours($event)" ng-mouseleave="hiddenAllTours($event)">
-                        <img ng-src="{{item.des.img}}" alt="{{item.des.title}}">
+                        <img ng-src="{{item.des.img}}" alt="TK Vacation - {{item.des.title}}">
                         <div class="category-overlay hidden"></div>
                         <div class="tourmaster-tour-category-overlay"></div>
                         <div class="tourmaster-tour-category-head">
@@ -161,7 +161,7 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="view-all hidden">
-                                <a href="#!/tours/{{item.des.id}}">VIEW ALL TOURS</a>
+                                <a title= "TK Vacation - {{item.des.title}}" href="#!/tours/{{item.des.id}}">VIEW ALL TOURS</a>
                             </div>
                         </div>
                         <!-- <div class="tourmaster-tour-category-line"></div> -->

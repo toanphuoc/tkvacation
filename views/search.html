@@ -62,13 +62,13 @@
 
 				<div class="row item" ng-repeat="item in tours" ng-show="tours.length > 0">
 					<div class="col-md-5 col-sm-5 col-xs-12 padding_0 item_img">
-						<a href="#!/tour/{{item.id}}" title="">
-							<img ng-src="{{item.img}}" alt="">
+						<a href="#!/tour/{{item.id}}" title="TK Vavation - {{item.name}}">
+							<img ng-src="{{item.img}}" alt="TK Vavation - {{item.name}}">
 						</a>	
 					</div>
 					<div class="col-md-5 col-sm-5 col-xs-12 tour-detail-center">
 						<h3 class="name">
-							<a class="name-text" href="#!/tour/{{item.id}}" title="">{{item.name}}</a>
+							<a class="name-text" href="#!/tour/{{item.id}}" title="TK Vavation - {{item.name}}">{{item.name}}</a>
 						</h3>
 						<p class="tourmaster-tour-info-duration-text">
 							<i class="fa fa-clock-o"></i>
@@ -88,7 +88,7 @@
 							<p class="price-value-dolar">{{item.price | currency}}</p>
 							<p class="price-value-vnd">{{item.price_vnd | currency: "VND ":0}}</p>
 							<!-- <input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS"> -->
-							<a href="#!/tour/{{item.id}}" class="tours-details-btn">VIEW DETAILS</a>
+							<a href="#!/tour/{{item.id}}" title="TK Vavation - {{item.name}}" class="tours-details-btn">VIEW DETAILS</a>
 						</div>
 
 					</div>
@@ -96,7 +96,7 @@
 				<div class="row text-right" ng-show="pagin.length > 1">
 					<ul class="pagination search_pagination">
 						<li ng-repeat="p in pagin track by $index" ng-class="$index + 1 == currentPage ? 'active' : ''">
-							<a href="javascript:void(0);" ng-click="navigate($index + 1);">{{$index + 1}}</a>
+							<a href="javascript:void(0);" title="TK Vavation" ng-click="navigate($index + 1);">{{$index + 1}}</a>
 						</li>
 					</ul>
 				</div>

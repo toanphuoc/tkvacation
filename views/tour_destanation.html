@@ -10,13 +10,13 @@
 				<div ng-repeat="item in data.data">
 					<div class="row item">
 						<div class="col-md-5 col-sm-5 col-xs-12 padding_0 item_img">
-							<a href="#!/tour/{{item.id}}" title="">
-								<img ng-src="{{item.img}}" alt="">
+							<a href="#!/tour/{{item.id}}" title="TK Vavation - {{item.name}}">
+								<img ng-src="{{item.img}}" alt="TK Vavation - {{item.name}}">
 							</a>	
 						</div>
 						<div class="col-md-5 col-sm-5 col-xs-12 tour-detail-center">
 							<h3 class="name">
-								<a class="name-text" href="#!/tour/{{item.id}}" title="">{{item.name}}</a>
+								<a class="name-text" href="#!/tour/{{item.id}}" title="TK Vavation - {{item.name}}">{{item.name}}</a>
 							</h3>
 							<p class="tourmaster-tour-info-duration-text">
 								<i class="fa fa-clock-o"></i>
@@ -24,7 +24,7 @@
 							</p>
 							<p class="tourmaster-tour-info-availability">
 								<i class="fa fa-calendar"></i>
-								Availability : {{item.availability}}
+								Availability : {{item.availability == null ? 'Available' : item.availability}}
 							</p>
 							<div class="itinerary" ng-bind-html="item.overview">
 			
@@ -36,7 +36,7 @@
 								<p class="price-value-dolar">{{item.price | currency}}</p>
 								<p class="price-value-vnd">{{item.price_vnd | currency:"VND ":0}}</p>
 								<!-- <input type="submit" class="tours-details-btn" name="" value="VIEW DETAILS"> -->
-								<a href="#!/tour/{{item.id}}" class="tours-details-btn">VIEW DETAILS</a>
+								<a title="TK Vavation - {{item.name}}" href="#!/tour/{{item.id}}" class="tours-details-btn">VIEW DETAILS</a>
 							</div>
 
 						</div>
@@ -48,12 +48,12 @@
 					<h3>Other destinations</h3>
 						<div class="row margin_0">
 							<div class="col-md-12 col-sm-6 col-xs-12 padding_0 item" ng-repeat="item in otherDes">
-								<a href="#!/tours/{{item.des.id}}" title="">
-									<img ng-src="{{item.des.img}}" alt="">
+								<a href="#!/tours/{{item.des.id}}" title="TK Vavation - {{item.des.title}}">
+									<img ng-src="{{item.des.img}}" alt="TK Vavation - {{item.des.title}}">
 								</a>
 								<div class="other-des-name">
 									<div class="other-des-name-value" style="float: left;">
-										<a href="#!/tours/{{item.des.id}}" title="">{{item.des.title}}</a>
+										<a href="#!/tours/{{item.des.id}}" title="TK Vavation - {{item.des.title}}">{{item.des.title}}</a>
 										
 									</div>
 									<div style="float: right;">

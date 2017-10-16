@@ -43,7 +43,7 @@ app.controller('HomeController', function ($scope, $location, $http, $rootScope,
 
 
 		angular.forEach($scope.popularTours, function(value, key){
-			value.availability = $filter('date')(new Date(value.availability),'MMM dd, yyyy');
+			value.availability = $filter('date')(new Date(value.availability.replace(/-/g, "/")),'MMM dd, yyyy');
 		});
 	});
 

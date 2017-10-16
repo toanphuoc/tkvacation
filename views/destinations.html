@@ -8,7 +8,7 @@
 		<div class="row margin_0">
 				<div class="col-md-4 col-sm-6" ng-repeat="item in des" ng-mouseover="showAllTours($event)" ng-mouseleave="hiddenAllTours($event)">
 					<div style="" class="item">
-						<img ng-src="{{item.des.img}}">
+						<img ng-src="{{item.des.img}}" alt="TK Vacation - {{item.des.title}}">
 						<div class="category-overlay hidden"></div>
 						<div class="category-overlay-front"></div>
 						<div class="category-head">
@@ -23,7 +23,7 @@
 								<div class="clearfix"></div>
 							</div>
 							<div class="category-head-animate hidden">
-								<a href="#!/tours/{{item.des.id}}" class="category-head-link">VIEW ALL TOURS</a>
+								<a href="#!/tours/{{item.des.id}}" class="category-head-link" title="TK Vacation- {{item.des.title}}">VIEW ALL TOURS</a>
 								<div class="category-head-divider"></div>
 							</div>
 						</div>

@@ -19,7 +19,7 @@ app.controller('DestinationTourController', function ($scope, $routeParams, $htt
 		$scope.data = response.data;
 
 		angular.forEach($scope.data.data, function(value, key){
-			value.availability = $filter('date')(new Date(value.availability),'MMM dd, yyyy');
+			value.availability = $filter('date')(new Date(value.availability.replace(/-/g, "/")),'MMM dd, yyyy');
 		});
 	});
 
